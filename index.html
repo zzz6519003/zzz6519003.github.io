@@ -63,6 +63,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Learning-Notes-Angular" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/04/Learning-Notes-Angular/" class="article-date">
+  <time datetime="2014-10-04T15:52:37.000Z" itemprop="datePublished">Oct 4 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">button</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-show</span>=<span class="value">"store.product.canPurchase"</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> app = angular.module(<span class="string">'gemStore'</span>, []);</div><div class="line"></div><div class="line">  app.controller(<span class="string">'StoreController'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    <span class="keyword">this</span>.product = gem;</div><div class="line">  });</div><div class="line"></div><div class="line">  <span class="keyword">var</span> gem = {</div><div class="line">    name: <span class="string">'Azurite'</span>,</div><div class="line">    price: <span class="number">110.50</span>,</div><div class="line">    canPurchase: <span class="literal">false</span>,</div><div class="line">    soldOut: <span class="literal">true</span></div><div class="line">  };</div><div class="line">})();</div></pre></td></tr></table></figure>
+
+<ul>
+<li>ng-hide</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span> <span class="attribute">ng-repeat</span>=<span class="value">"product in store.products"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span></span><span class="expression">{{<span class="variable">product.price</span> | <span class="variable">currency</span> &lt;<span class="end-block">/em</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>Pipe - “send the output into”</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/04/Learning-Notes-Angular/" data-id="pkj9fsdsa69nsxw4" class="article-share-link">Share</a>
+      
+        <a href="http://yoursite.com/2014/10/04/Learning-Notes-Angular/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/02/hello-world/" class="article-date">
@@ -109,6 +169,8 @@
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2014/10/02/hello-world/" data-id="u1q1rd70ehmejgbe" class="article-share-link">Share</a>
       
+        <a href="http://yoursite.com/2014/10/02/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
+      
       
     </footer>
   </div>
@@ -132,7 +194,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -142,6 +204,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
+          </li>
         
           <li>
             <a href="/2014/10/02/hello-world/">Hello World</a>
@@ -173,6 +239,18 @@
   
 </nav>
     
+<script>
+  var disqus_shortname = 'Snowmanzzz';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
