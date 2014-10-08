@@ -63,6 +63,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Node-js开发指南-Learning-note" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/08/Node-js开发指南-Learning-note/" class="article-date">
+  <time datetime="2014-10-08T15:26:11.000Z" itemprop="datePublished">Oct 8 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/08/Node-js开发指南-Learning-note/">Node.js开发指南 Learning note</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Node.js 中，并不是所有的 API 都提供了同步和异步版本。Node.js 不鼓励使用同步 I/O。</p>
+<p>模块是 Node.js 应用程序的基本组成部分，文件和模块是一一对应的。</p>
+<p>在 Node.js 中，创建一个模块非常简单，因为一个文件就是一个模块，我们要关注的问<br>题仅仅在于如何在其他文件中获取这个模块。Node.js 提供了 exports 和 require 两个对<br>象，其中 exports 是模块公开的接口，require 用于从外部获取一个模块的接口，即所获<br>取模块的 exports 对象。</p>
+<p>覆盖 exports</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.Hello = Hello; </div><div class="line">-&gt;</div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
+
+<p>在使用 npm 安装包的时候，有两种模式：本地模式和全局模式。</p>
+<h2 id="Node-js进阶话题">Node.js进阶话题</h2>
+<p>核心模块拥有最高的加载优先级，换言之如果有模块与其命名冲突，<br>Node.js 总是会加载核心模块。</p>
+<p>BAD:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); </div><div class="line"><span class="keyword">var</span> files = [<span class="string">'a.txt'</span>, <span class="string">'b.txt'</span>, <span class="string">'c.txt'</span>]; </div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) { </div><div class="line"> fs.readFile(files[i], <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, contents)</span> </span>{ </div><div class="line"> <span class="built_in">console</span>.log(files); </div><div class="line"> <span class="built_in">console</span>.log(i); </div><div class="line"> <span class="built_in">console</span>.log(files[i]); </div><div class="line"> }); </div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>可以利用<br>JavaScript 函数式编程的特性，手动建立一个闭包：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) { </div><div class="line"> (<span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>{ </div><div class="line"> fs.readFile(files[i], <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, contents)</span> </span>{ </div><div class="line"> <span class="built_in">console</span>.log(files[i] + <span class="string">': '</span> + contents); </div><div class="line"> }); </div><div class="line"> })(i); </div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>cluster的功能是生成与当<br>前进程相同的子进程，并且允许父进程和子进程之间共享端口。Node.js 的另一个核心模块<br>child_process 也提供了相似的进程生成功能，但最大的区别在于cluster 允许跨进程端<br>口复用，给我们的网络服务器开发带来了很大的方便。</p>
+<p>闭包的严格定义是“由函数（环境）及其封闭的自由变量组成的集合体。”</p>
+<ul>
+<li>构造函数内定义的属性继承方式与原型不同，子对象需要显式调用父对象才能继承构<br>造函数内定义的属性。</li>
+<li>构造函数内定义的任何属性，包括函数在内都会被重复创</li>
+<li>同一个构造函数产生的<br>两个对象不共享实例。</li>
+<li>构造函数内定义的函数有运行时闭包的开销，因为构造函数内的局部变量对其中定义的函数来说也是可见的。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/08/Node-js开发指南-Learning-note/" data-id="j01s80s4e9nns8dh" class="article-share-link">Share</a>
+      
+        <a href="http://yoursite.com/2014/10/08/Node-js开发指南-Learning-note/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Learning-Notes-Angular" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/04/Learning-Notes-Angular/" class="article-date">
@@ -194,7 +255,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -204,6 +265,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/10/08/Node-js开发指南-Learning-note/">Node.js开发指南 Learning note</a>
+          </li>
         
           <li>
             <a href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
