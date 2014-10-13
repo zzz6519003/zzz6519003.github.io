@@ -96,6 +96,15 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.Hello = Hello; </div><div class="line">-&gt;</div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
 
 <p>在使用 npm 安装包的时候，有两种模式：本地模式和全局模式。</p>
+<h2 id="Node-js核心模块">Node.js核心模块</h2>
+<h3 id="常用工具_util">常用工具 util</h3>
+<p>提供常用函数的集合,用于弥补核心 JavaScript 的功能过于精简的不足。</p>
+<ul>
+<li>util.inherits</li>
+<li>util.inspect</li>
+</ul>
+<h3 id="event">event</h3>
+<p>大多数时候我们不会直接使用 EventEmitter,而是在对象中继承它。包括 fs、net、 http 在内的,只要是支持事件响应的核心模块都是 EventEmitter 的子类。<br>为什么要这样做呢?原因有两点。首先,具有某个实体功能的对象实现事件符合语义, 事件的监听和发射应该是一个对象的方法。其次 JavaScript 的对象机制是基于原型的,支持 部分多重继承,继承 EventEmitter 不会打乱对象原有的继承关系。</p>
 <h2 id="Node-js进阶话题">Node.js进阶话题</h2>
 <p>核心模块拥有最高的加载优先级，换言之如果有模块与其命名冲突，<br>Node.js 总是会加载核心模块。</p>
 <p>BAD:</p>
