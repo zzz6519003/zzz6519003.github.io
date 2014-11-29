@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>node-testing | 男哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="更新中...
+Mocha
+Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser. For more information view the documentation.
+Intro
+搭建一个测试原型
+12//f2e 是原型生成的目录mocha init f2e
+
+浏览器测试 饭">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-testing">
+<meta property="og:url" content="http://about.me/zzz6519003/2014/11/29/node-testing/">
+<meta property="og:site_name" content="男哥">
+<meta property="og:description" content="更新中...
+Mocha
+Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser. For more information view the documentation.
+Intro
+搭建一个测试原型
+12//f2e 是原型生成的目录mocha init f2e
+
+浏览器测试 饭">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-testing">
+<meta name="twitter:description" content="更新中...
+Mocha
+Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser. For more information view the documentation.
+Intro
+搭建一个测试原型
+12//f2e 是原型生成的目录mocha init f2e
+
+浏览器测试 饭">
+
+  
+    <link rel="alternative" href="/atom.xml" title="男哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">男哥</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">银河系快乐狙击队长</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://about.me/zzz6519003"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-testing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/29/node-testing/" class="article-date">
+  <time datetime="2014-11-29T14:44:53.000Z" itemprop="datePublished">Nov 29 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node-testing
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>更新中...</code></p>
+<h1 id="Mocha">Mocha</h1>
+<p>Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser. For more information view the documentation.</p>
+<h3 id="Intro">Intro</h3>
+<p>搭建一个测试原型</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//f2e 是原型生成的目录</span></div><div class="line">mocha <span class="keyword">init</span> f2e</div></pre></td></tr></table></figure>
+
+<p>浏览器测试 饭桶js</p>
+<p><code>npm i -g mocha-phantomjs</code></p>
+<p>npm i 为npm install的缩写</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.mochaPhantomJS) { mochaPhantomJS.run(); }</div></pre></td></tr></table></figure>
+
+<p>出于应用健壮性的考量，针对前端 js 脚本的单元测试也非常重要。而前后端通吃，也是 mocha 的一大特点。</p>
+<h3 id="Fun">Fun</h3>
+<h3 id="Example">Example</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">  scapegoat = <span class="built_in">require</span>(<span class="string">'../index'</span>),</div><div class="line">  <span class="built_in">escape</span> = scapegoat.escape,</div><div class="line">  <span class="built_in">unescape</span> = scapegoat.unescape;</div><div class="line"></div><div class="line">  describe(<span class="string">'#escape'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    it(<span class="string">'converts & into &amp;'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">escape</span>(<span class="string">'&'</span>).should.equal(<span class="string">'&amp;'</span>);</div><div class="line">  });</div></pre></td></tr></table></figure>
+
+<h1 id="Chai">Chai</h1>
+<p>Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">Should</div><div class="line"></div><div class="line">chai.should();</div><div class="line"></div><div class="line">foo.should.be.a(<span class="string">'string'</span>);</div><div class="line">foo.should.equal(<span class="string">'bar'</span>);</div><div class="line">foo.should.have.length(<span class="number">3</span>);</div><div class="line">tea.should.have.property(<span class="string">'flavors'</span>)</div><div class="line">  .with.length(<span class="number">3</span>);</div><div class="line">  </div><div class="line">Expect</div><div class="line"></div><div class="line"><span class="keyword">var</span> expect = chai.expect;</div><div class="line"></div><div class="line">expect(foo).to.be.a(<span class="string">'string'</span>);</div><div class="line">expect(foo).to.equal(<span class="string">'bar'</span>);</div><div class="line">expect(foo).to.have.length(<span class="number">3</span>);</div><div class="line">expect(tea).to.have.property(<span class="string">'flavors'</span>)</div><div class="line">  .with.length(<span class="number">3</span>);</div><div class="line"></div><div class="line">Assert</div><div class="line"></div><div class="line"><span class="keyword">var</span> assert = chai.assert;</div><div class="line"></div><div class="line">assert.typeOf(foo, <span class="string">'string'</span>);</div><div class="line">assert.equal(foo, <span class="string">'bar'</span>);</div><div class="line">assert.lengthOf(foo, <span class="number">3</span>)</div><div class="line">assert.property(tea, <span class="string">'flavors'</span>);</div><div class="line">assert.lengthOf(tea.flavors, <span class="number">3</span>);</div></pre></td></tr></table></figure>
+
+<h3 id="参考链接">参考链接</h3>
+<ul>
+<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson7" target="_blank" rel="external">https://github.com/alsotang/node-lessons/tree/master/lesson7</a></li>
+<li><a href="https://github.com/zzz6519003/my_first_node_module" target="_blank" rel="external">https://github.com/zzz6519003/my_first_node_module</a></li>
+<li><a href="http://chaijs.com/" target="_blank" rel="external">http://chaijs.com/</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://about.me/zzz6519003/2014/11/29/node-testing/" data-id="bm3fb5cjqycl7wcl" class="article-share-link">Share</a>
+      
+        <a href="http://about.me/zzz6519003/2014/11/29/node-testing/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/10/28/《九浅一深node-js》Book Note/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">《九浅一深node.js》Book Note</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/TODO/" style="font-size: NaNpx;">TODO</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/11/29/node-testing/">node-testing</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/28/《九浅一深node-js》Book Note/">《九浅一深node.js》Book Note</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/08/Node-js开发指南-Learning-note/">《Node.js开发指南》 Book Note</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/02/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'Snowmanzzz';
+  
+  var disqus_url = 'http://about.me/zzz6519003/2014/11/29/node-testing/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
