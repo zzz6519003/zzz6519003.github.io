@@ -67,6 +67,172 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Have-a-cup-of-coffee" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/31/Have-a-cup-of-coffee/" class="article-date">
+  <time datetime="2014-12-31T01:59:39.000Z" itemprop="datePublished">Dec 31 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/31/Have-a-cup-of-coffee/">Have a cup of coffee</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">greet</span> = <span class="params">(message)</span> -&gt;</span></div><div class="line">  alert message</div></pre></td></tr></table></figure>
+
+<h3 id="Advantages">Advantages</h3>
+<ul>
+<li>Least amount of code to solve problems</li>
+<li>Readable and Understandable</li>
+<li>Easy to Maintain</li>
+</ul>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">message = <span class="string">"Ready for some Coffee?"</span></div><div class="line">alert(message)</div></pre></td></tr></table></figure>
+
+<p>=&gt;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> message;</div><div class="line">message = <span class="string">"Ready for some Coffee?"</span>;</div><div class="line">alert(message);</div></pre></td></tr></table></figure>
+
+<h3 id="Use_a_default_value_of_‘Stranger’_for_the_name_parameter">Use a default value of ‘Stranger’ for the name parameter</h3>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">greet</span> = <span class="params">(name=<span class="string">'Stranger'</span>)</span> -&gt;</span> alert name</div></pre></td></tr></table></figure>
+
+<p>=&gt;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> greet;</div><div class="line">greet = <span class="function"><span class="keyword">function</span><span class="params">(name)</span> </span>{</div><div class="line">  <span class="keyword">if</span> (name == <span class="literal">null</span>) {</div><div class="line">    name = <span class="string">'Stranger'</span>;</div><div class="line">  }</div><div class="line">  <span class="keyword">return</span> <span class="string">"Hello, "</span> + name;</div><div class="line">};</div></pre></td></tr></table></figure>
+
+<p>Kind of Like <code>Ruby</code> ha, But In this field, it is called <code>CoffeeScript-style string interpolation.</code></p>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">greet</span> = <span class="params">(name=<span class="string">'Stranger'</span>)</span> -&gt;</span></div><div class="line">  <span class="string">"Hello, <span class="subst">#{name}</span>"</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">sum</span> = <span class="params">(a, b)</span> -&gt;</span></div><div class="line">  a + b</div></pre></td></tr></table></figure>
+
+<p>One thing I like it is, you can be 任性 like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">coffee</span><span class="params">()</span></span></div><div class="line"><span class="title">coffee</span><span class="params">(<span class="string">"Yo"</span>)</span></div><div class="line"><span class="title">coffee</span> "Y<span class="title">o</span>"</div><div class="line"><span class="title">coffee</span><span class="params">(<span class="string">"Yo"</span>, <span class="number">2</span>)</span></div><div class="line"><span class="title">coffee</span> "Y<span class="title">o</span>", 2</div></pre></td></tr></table></figure>
+
+<h3 id="Array">Array</h3>
+<p>storeLocations = [‘Orlando’, ‘Winter Park’, ‘Sanford’]</p>
+<p>Can use new lines instead of commas</p>
+<p>storeLocations = [<br> ‘Orlando’<br> ‘Winter Park’<br> ‘Sanford’<br>]</p>
+<h2 id="Loop">Loop</h2>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">storeLocations.forEach <span class="function"><span class="params">(location, index)</span> -&gt;</span></div><div class="line"> alert <span class="string">"Location: <span class="subst">#{location}</span></span></div><div class="line"> </div><div class="line">alert "<span class="attribute">Location</span>: <span class="comment">#{location}" for location in storeLocations</span></div><div class="line"><span class="keyword">for</span> location <span class="keyword">in</span> storeLocations</div><div class="line"> alert <span class="string">"Location: <span class="subst">#{location}</span>"</span></div></pre></td></tr></table></figure>
+
+<h3 id="Install">Install</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. <span class="constant">Install</span> <span class="constant">Node</span>.js <span class="symbol">http:</span>/<span class="regexp">/nodejs.org/</span></div><div class="line"><span class="number">2</span>. <span class="constant">Install</span> npm <span class="symbol">http:</span>/<span class="regexp">/npmjs.org/</span></div><div class="line"><span class="number">3</span>. <span class="variable">$ </span>npm install -g coffee-script</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">coffee -c <span class="keyword">test</span>.coffee Creates <span class="keyword">test</span>.js</div><div class="line">coffee -cw <span class="keyword">test</span>.coffee Every time <span class="keyword">test</span>.coffee is</div><div class="line">updated re-compile.</div><div class="line">coffee -c src -o <span class="keyword">js</span> Compile all <span class="string">.coffee</span> files <span class="keyword">in</span> the</div><div class="line">src dir <span class="keyword">into</span> the <span class="keyword">js</span> dir. </div><div class="line">coffee -wc src -o <span class="keyword">js</span> Every time a file is updated</div><div class="line">re-compile</div></pre></td></tr></table></figure>
+
+<p>Link:<br><a href="http://coffeescript.codeschool.com/levels/1/challenges/1" target="_blank" rel="external">http://coffeescript.codeschool.com/levels/1/challenges/1</a><br><a href="http://courseware.codeschool.com/coffeescript_slides.pdf" target="_blank" rel="external">http://courseware.codeschool.com/coffeescript_slides.pdf</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://about.me/zzz6519003/2014/12/31/Have-a-cup-of-coffee/" data-id="sc0e712w83fj7tui" class="article-share-link">Share</a>
+      
+        <a href="http://about.me/zzz6519003/2014/12/31/Have-a-cup-of-coffee/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Instapaper™-VS-Pocket™" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/30/Instapaper™-VS-Pocket™/" class="article-date">
+  <time datetime="2014-12-30T02:27:16.000Z" itemprop="datePublished">Dec 30 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/30/Instapaper™-VS-Pocket™/">Instapaper™ VS Pocket™</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://about.me/zzz6519003/2014/12/30/Instapaper™-VS-Pocket™/" data-id="xo26u1fxwcdyctfe" class="article-share-link">Share</a>
+      
+        <a href="http://about.me/zzz6519003/2014/12/30/Instapaper™-VS-Pocket™/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Difference-of-Facebook-and-China-s-FB" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/" class="article-date">
+  <time datetime="2014-12-30T00:47:10.000Z" itemprop="datePublished">Dec 30 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/">Difference of Facebook and China&#39;s FB</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="What_is_China’s_FB">What is China’s FB</h3>
+<h3 id="The_difference_of_the_personality_between_chinese_and_americans">The difference of the personality between chinese and americans</h3>
+<h3 id="The_difference_of_China’s_FB">The difference of China’s FB</h3>
+<p>1 In FB, someone post a status,</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://about.me/zzz6519003/2014/12/30/Difference-of-Facebook-and-China-s-FB/" data-id="yp8yi4y9cikjiszd" class="article-share-link">Share</a>
+      
+        <a href="http://about.me/zzz6519003/2014/12/30/Difference-of-Facebook-and-China-s-FB/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design/">Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Product/">Product</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-我是如何堕落的" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/28/我是如何堕落的/" class="article-date">
@@ -130,10 +296,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>这个世界没有什么对与错 但是有最佳实践    —男哥     </em></p>
+        <p><em>这个世界没有什么对与错 但是有最佳实践    —男哥     </em><br><em>用类比的方法 我可以更清晰地看清这个世界 甚至这个宇宙    —男哥</em></p>
 <p>之前跟朋友聊，朋友说GFW不会真正影响我们，说因为翻墙太容易了，只要你想根本不是问题。<br>他说的的确也是。但是如果翻墙说到底还是会花时间的，如果你一时想要搜一个东西比较急（其实大多数你要搜东西的时候都应该是比较心切想要知道答案的），你一般就会选择百度了，<strong>百度没有错</strong>，但是如果你因为这个而丧失了接触更好东西的机会，那就得不偿失了。</p>
 <p>因为互联网有棒棒的东西叫做超链接，当你得到了优质的搜索结果后，想象力是不可低估的，搜索结果不同造成的影响可以到次方级别。</p>
-<p>GFW的好处：</p>
+<h3 id="为什么中国有GFW（我的观点">为什么中国有GFW（我的观点</h3>
+<p>其实一个国家很多程度上跟一个人类似的，中国之所以对网络那么敏感，就是想限制人们知道有些黑历史。我觉得中国人还是很爱面子的，所以类比的来说，我们中国公民就类似与一个家庭的孩子，因为身家不太清白，家里的大人就限制你去了解世界，因为他怕你知道了黑历史后就觉得自己家原来并不是那么神圣了。<br>所以我们每个中国公民就像是一个，<strong><em>被内闭的家庭教育所坑害了的孩子</em></strong>。</p>
+<p>不过既然有害处就一定有好处<br>GFW的好处：</p>
 <ul>
 <li>有妹子找我学翻墙</li>
 <li>麦迪在twitter上回复了我</li>
@@ -222,9 +390,11 @@
       
         <p>I’m gonna use this post to <em>continuesly</em> show all those design defection that I’ve been through.<br>The <strong><em>God Design</em></strong> is like this:<br>I think maybe I do this, it can have some effect in my mind, and i tried it, and yay! it works!</p>
 <p>Switching input method in OSX<br>in</p>
-<p>Sougou iOS custom input method</p>
+<h3 id="Sougou_iOS_custom_input_method">Sougou iOS custom input method</h3>
 <p>In iOS, u can register some quick input combo.<br>like me, if i type “zzzg”, it should have “zhengzhongzhao###gmail”</p>
 <p>in the Sougou custom input method, we don’t have it.</p>
+<h3 id="iOS,_Wechat,_Renren_sharing">iOS, Wechat, Renren sharing</h3>
+<p>It’s been a long time since iOS8 releases, but wechat(the most likely one to be the FB in CHINA) haven’t come with the extension of sharing.</p>
 
       
     </div>
@@ -234,7 +404,7 @@
         <a href="http://about.me/zzz6519003/2014/12/07/design-defect/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design/">Design</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design/">Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Product/">Product</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 
     </footer>
   </div>
@@ -525,122 +695,10 @@
 
 
   
-    <article id="post-Learning-Notes-Angular" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/04/Learning-Notes-Angular/" class="article-date">
-  <time datetime="2014-10-04T15:52:37.000Z" itemprop="datePublished">Oct 4 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">button</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-show</span>=<span class="value">"store.product.canPurchase"</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> app = angular.module(<span class="string">'gemStore'</span>, []);</div><div class="line"></div><div class="line">  app.controller(<span class="string">'StoreController'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    <span class="keyword">this</span>.product = gem;</div><div class="line">  });</div><div class="line"></div><div class="line">  <span class="keyword">var</span> gem = {</div><div class="line">    name: <span class="string">'Azurite'</span>,</div><div class="line">    price: <span class="number">110.50</span>,</div><div class="line">    canPurchase: <span class="literal">false</span>,</div><div class="line">    soldOut: <span class="literal">true</span></div><div class="line">  };</div><div class="line">})();</div></pre></td></tr></table></figure>
-
-<ul>
-<li>ng-hide</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span> <span class="attribute">ng-repeat</span>=<span class="value">"product in store.products"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span></span><span class="expression">{{<span class="variable">product.price</span> | <span class="variable">currency</span> &lt;<span class="end-block">/em</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<ul>
-<li>Pipe - “send the output into”</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://about.me/zzz6519003/2014/10/04/Learning-Notes-Angular/" data-id="pkj9fsdsa69nsxw4" class="article-share-link">Share</a>
-      
-        <a href="http://about.me/zzz6519003/2014/10/04/Learning-Notes-Angular/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/02/hello-world/" class="article-date">
-  <time datetime="2014-10-02T13:26:39.000Z" itemprop="datePublished">Oct 2 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://about.me/zzz6519003/2014/10/02/hello-world/" data-id="u1q1rd70ehmejgbe" class="article-share-link">Share</a>
-      
-        <a href="http://about.me/zzz6519003/2014/10/02/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
         
@@ -652,7 +710,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -661,7 +719,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design/" style="font-size: 15.00px;">Design</a><a href="/tags/GFW/" style="font-size: 15.00px;">GFW</a><a href="/tags/Life/" style="font-size: 15.00px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 15.00px;">Node</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a>
+      <a href="/tags/Design/" style="font-size: 16.67px;">Design</a><a href="/tags/GFW/" style="font-size: 13.33px;">GFW</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/Life/" style="font-size: 13.33px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 13.33px;">Node</a><a href="/tags/Product/" style="font-size: 16.67px;">Product</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a><a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a>
     </div>
   </div>
 
@@ -670,7 +728,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -682,23 +740,23 @@
       <ul>
         
           <li>
+            <a href="/2014/12/31/Have-a-cup-of-coffee/">Have a cup of coffee</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/Instapaper™-VS-Pocket™/">Instapaper™ VS Pocket™</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/">Difference of Facebook and China&#39;s FB</a>
+          </li>
+        
+          <li>
             <a href="/2014/12/28/我是如何堕落的/">我是怎么堕落的</a>
           </li>
         
           <li>
             <a href="/2014/12/18/这篇博客用来喷GFW/">这篇博客用来喷GFW</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/11/The-Art-of-Unix-Programming-Book-Note/">The Art of Unix Programming-Book Note</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/07/design-defect/">design-defect</a>
-          </li>
-        
-          <li>
-            <a href="/2014/11/29/node-testing/">node-testing</a>
           </li>
         
       </ul>
