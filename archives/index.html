@@ -104,6 +104,7 @@
 <p>=&gt;</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> message;</div><div class="line">message = <span class="string">"Ready for some Coffee?"</span>;</div><div class="line">alert(message);</div></pre></td></tr></table></figure>
 
+<h3 id="All_the_code_is_wrapped_up_in_a_closure_to_prevent_variable_pollution">All the code is wrapped up in a closure to prevent variable pollution</h3>
 <h3 id="Use_a_default_value_of_‘Stranger’_for_the_name_parameter">Use a default value of ‘Stranger’ for the name parameter</h3>
 <figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">greet</span> = <span class="params">(name=<span class="string">'Stranger'</span>)</span> -&gt;</span> alert name</div></pre></td></tr></table></figure>
 
@@ -121,9 +122,8 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">coffee</span><span class="params">()</span></span></div><div class="line"><span class="title">coffee</span><span class="params">(<span class="string">"Yo"</span>)</span></div><div class="line"><span class="title">coffee</span> "Y<span class="title">o</span>"</div><div class="line"><span class="title">coffee</span><span class="params">(<span class="string">"Yo"</span>, <span class="number">2</span>)</span></div><div class="line"><span class="title">coffee</span> "Y<span class="title">o</span>", 2</div></pre></td></tr></table></figure>
 
 <h3 id="Array">Array</h3>
-<p>storeLocations = [‘Orlando’, ‘Winter Park’, ‘Sanford’]</p>
-<p>Can use new lines instead of commas</p>
-<p>storeLocations = [<br> ‘Orlando’<br> ‘Winter Park’<br> ‘Sanford’<br>]</p>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">storeLocations = [<span class="string">'Orlando'</span>, <span class="string">'Winter Park'</span>, <span class="string">'Sanford'</span>]</div><div class="line"></div><div class="line">Can use <span class="keyword">new</span> lines instead <span class="keyword">of</span> commas</div><div class="line"></div><div class="line">storeLocations = [</div><div class="line"> <span class="string">'Orlando'</span></div><div class="line"> <span class="string">'Winter Park'</span></div><div class="line"> <span class="string">'Sanford'</span></div><div class="line">]</div></pre></td></tr></table></figure>
+
 <h2 id="Loop">Loop</h2>
 <figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">storeLocations.forEach <span class="function"><span class="params">(location, index)</span> -&gt;</span></div><div class="line"> alert <span class="string">"Location: <span class="subst">#{location}</span></span></div><div class="line"> </div><div class="line">alert "<span class="attribute">Location</span>: <span class="comment">#{location}" for location in storeLocations</span></div><div class="line"><span class="keyword">for</span> location <span class="keyword">in</span> storeLocations</div><div class="line"> alert <span class="string">"Location: <span class="subst">#{location}</span>"</span></div></pre></td></tr></table></figure>
 
@@ -138,9 +138,17 @@
 <p>If u do python, you familiar with this.</p>
 <figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">filteredFlights =</div><div class="line">(flight <span class="keyword">for</span> flight <span class="keyword">in</span> currentFlights <span class="keyword">when</span> stops <span class="keyword">is</span> <span class="string">'2+'</span> <span class="keyword">or</span></div><div class="line">flight.routing <span class="keyword">is</span> <span class="number">0</span>)</div></pre></td></tr></table></figure>
 
-<p>There’re lots of other stuff, like automatically <code>hoisting</code> for u to check out.</p>
 <h3 id="OOP">OOP</h3>
+<p>the great <code>extend</code> keyword<br>My friend <code>Teddy</code> has a great <a href="http://teddy1004.github.io/2014/12/04/class-inheritance-in-JavaScript/" target="_blank" rel="external">post</a> about this.</p>
+<figure class="highlight coffee"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Snake</span> <span class="keyword">extends</span> <span class="title">Animal</span></span></div></pre></td></tr></table></figure>
+
+<p>= &gt;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Generated by CoffeeScript 1.8.0</span></div><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> Animal, Snake,</div><div class="line">    __hasProp = {}.hasOwnProperty,</div><div class="line">    __extends = <span class="function"><span class="keyword">function</span><span class="params">(child, parent)</span> </span>{ <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> parent) { <span class="keyword">if</span> (__hasProp.call(parent, key)) child[key] = parent[key]; } <span class="function"><span class="keyword">function</span> <span class="title">ctor</span><span class="params">()</span> </span>{ <span class="keyword">this</span>.constructor = child; } ctor.prototype = parent.prototype; child.prototype = <span class="keyword">new</span> ctor(); child.__super__ = parent.prototype; <span class="keyword">return</span> child; };</div><div class="line"></div><div class="line">  Animal = (<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Animal</span><span class="params">()</span> </span>{}</div><div class="line"></div><div class="line">    <span class="keyword">return</span> Animal;</div><div class="line"></div><div class="line">  })();</div><div class="line"></div><div class="line">  Snake = (<span class="function"><span class="keyword">function</span><span class="params">(_super)</span> </span>{</div><div class="line">    __extends(Snake, _super);</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Snake</span><span class="params">()</span> </span>{</div><div class="line">      <span class="keyword">return</span> Snake.__super__.constructor.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">return</span> Snake;</div><div class="line"></div><div class="line">  })(Animal);</div><div class="line"></div><div class="line">}).call(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
+
 <p>TODO</p>
+<h3 id="Others">Others</h3>
+<p>With the character =&gt;, it can lower the possibility of missing braces or brackets.</p>
+<p>There’re lots of other stuff, like automatically <code>hoisting</code> for u to check out.</p>
 <h3 id="Install">Install</h3>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. <span class="constant">Install</span> <span class="constant">Node</span>.js <span class="symbol">http:</span>/<span class="regexp">/nodejs.org/</span></div><div class="line"><span class="number">2</span>. <span class="constant">Install</span> npm <span class="symbol">http:</span>/<span class="regexp">/npmjs.org/</span></div><div class="line"><span class="number">3</span>. <span class="variable">$ </span>npm install -g coffee-script</div></pre></td></tr></table></figure>
 
@@ -148,7 +156,7 @@
 
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">coffee -c <span class="keyword">test</span>.coffee Creates <span class="keyword">test</span>.js</div><div class="line">coffee -cw <span class="keyword">test</span>.coffee Every time <span class="keyword">test</span>.coffee is</div><div class="line">updated re-compile.</div><div class="line">coffee -c src -o <span class="keyword">js</span> Compile all <span class="string">.coffee</span> files <span class="keyword">in</span> the</div><div class="line">src dir <span class="keyword">into</span> the <span class="keyword">js</span> dir. </div><div class="line">coffee -wc src -o <span class="keyword">js</span> Every time a file is updated</div><div class="line">re-compile</div></pre></td></tr></table></figure>
 
-<p>Link:<br><a href="http://coffeescript.codeschool.com/levels/1/challenges/1" target="_blank" rel="external">http://coffeescript.codeschool.com/levels/1/challenges/1</a><br><a href="http://courseware.codeschool.com/coffeescript_slides.pdf" target="_blank" rel="external">http://courseware.codeschool.com/coffeescript_slides.pdf</a></p>
+<p>Link:<br><a href="http://teddy1004.github.io/2014/12/04/class-inheritance-in-JavaScript/" target="_blank" rel="external">http://teddy1004.github.io/2014/12/04/class-inheritance-in-JavaScript/</a><br><a href="http://coffeescript.codeschool.com/levels/1/challenges/1" target="_blank" rel="external">http://coffeescript.codeschool.com/levels/1/challenges/1</a><br><a href="http://courseware.codeschool.com/coffeescript_slides.pdf" target="_blank" rel="external">http://courseware.codeschool.com/coffeescript_slides.pdf</a></p>
 
       
     </div>
@@ -189,7 +197,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>I’ve been migrating from Instapaper to Pocket recently.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Instapaper</th>
+<th>Pocket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stackoverflow</td>
+<td>support</td>
+<td>nope</td>
+</tr>
+<tr>
+<td>code viewing</td>
+<td>better</td>
+<td>Content in the second column</td>
+</tr>
+<tr>
+<td>SNS</td>
+<td>find your friend(although I don’t think this is useful)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     <footer class="article-footer">
@@ -198,6 +233,8 @@
         <a href="http://zzz6519003.github.io/2014/12/30/Instapaper™-VS-Pocket™/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/APP/">APP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
     </footer>
   </div>
   
@@ -726,7 +763,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP/">APP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -735,7 +772,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Design/" style="font-size: 16.67px;">Design</a><a href="/tags/GFW/" style="font-size: 13.33px;">GFW</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/Life/" style="font-size: 13.33px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 13.33px;">Node</a><a href="/tags/Product/" style="font-size: 16.67px;">Product</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a><a href="/tags/iOS/" style="font-size: 13.33px;">iOS</a>
+      <a href="/tags/APP/" style="font-size: 13.33px;">APP</a><a href="/tags/Design/" style="font-size: 16.67px;">Design</a><a href="/tags/GFW/" style="font-size: 13.33px;">GFW</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/Life/" style="font-size: 13.33px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 13.33px;">Node</a><a href="/tags/Product/" style="font-size: 16.67px;">Product</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a><a href="/tags/iOS/" style="font-size: 16.67px;">iOS</a>
     </div>
   </div>
 
