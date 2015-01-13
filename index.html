@@ -67,6 +67,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-slack作为团队交流工具的好处" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/13/slack作为团队交流工具的好处/" class="article-date">
+  <time datetime="2015-01-13T02:33:47.000Z" itemprop="datePublished">Jan 13 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我觉得程序员们先进性的一个很大体现在于沟通工具，方式的先进。<br>团队一旦变大，沟通成本就会明显<em>bigger than bigger</em>。</p>
+<p>我认为在线沟通和异步沟通 是最长久和有效率的方法。</p>
+<p>slack与普通工具例如bqq相比的好处：</p>
+<p>场景1：讨论组里 拉了一个人 他需要知道上下文，人们一般都是找一个人发一下聊天历史记录。如果用bqq</p>
+<p>场景2 : 有人说错话了  想要收回那句话，用slack可以直接编辑，而且有一个小细节我特别喜欢的是，如果一个人迅速发了好几句碎言碎语，slack会把这些话作为一句话。</p>
+<p>场景3：公司里有想主动找事做的人，想要知道大家在做什么。slack里有各种channel可以建立，比如我之前看过一篇holman的博客，Github有好几十个频道，每一个channel可以代表一个正在做的项目，public的channel是大家都可以参加的项目。<br>How GitHub Works: Be Asynchronous<br><a href="http://zachholman.com/posts/how-github-works-asynchronous" target="_blank" rel="external">http://zachholman.com/posts/how-github-works-asynchronous</a><br>吐血打滚推荐这篇文章</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/" data-id="g5cu0lqpqdbjpatk" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Have-a-cup-of-coffee" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/31/Have-a-cup-of-coffee/" class="article-date">
@@ -271,8 +315,8 @@
       
         <h3 id="What_is_China’s_FB">What is China’s FB</h3>
 <h3 id="The_difference_of_the_personality_between_chinese_and_americans">The difference of the personality between chinese and americans</h3>
-<h3 id="The_difference_of_China’s_FB">The difference of China’s FB</h3>
-<p>1 In FB, someone post a status,</p>
+<h3 id="The_difference_between_China’s_FB_&amp;_world’s_FB">The difference between China’s FB &amp; world’s FB</h3>
+<p>1 In FB, someone post a status, you reply it, you don’t need to specify the person to reply to. But in China, you have to do.</p>
 
       
     </div>
@@ -657,104 +701,6 @@
 
 
   
-    <article id="post-Node-js开发指南-Learning-note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/08/Node-js开发指南-Learning-note/" class="article-date">
-  <time datetime="2014-10-08T15:26:11.000Z" itemprop="datePublished">Oct 8 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/08/Node-js开发指南-Learning-note/">《Node.js开发指南》 Book Note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>更新 2014-11-29</p>
-<p>Node.js 中，并不是所有的 API 都提供了同步和异步版本。Node.js 不鼓励使用同步 I/O。</p>
-<p>模块是 Node.js 应用程序的基本组成部分，文件和模块是一一对应的。</p>
-<p>在 Node.js 中，创建一个模块非常简单，因为一个文件就是一个模块，我们要关注的问<br>题仅仅在于如何在其他文件中获取这个模块。Node.js 提供了 exports 和 require 两个对<br>象，其中 exports 是模块公开的接口，require 用于从外部获取一个模块的接口，即所获<br>取模块的 exports 对象。</p>
-<p>覆盖 exports</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports.Hello = Hello; </div><div class="line">-&gt;</div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
-
-<p>在使用 npm 安装包的时候，有两种模式：本地模式和全局模式。</p>
-<h2 id="Node-js核心模块">Node.js核心模块</h2>
-<h3 id="常用工具_util">常用工具 util</h3>
-<p>提供常用函数的集合,用于弥补核心 JavaScript 的功能过于精简的不足。</p>
-<ul>
-<li>util.inherits</li>
-<li>util.inspect</li>
-</ul>
-<h3 id="event">event</h3>
-<p>大多数时候我们不会直接使用 EventEmitter,而是在对象中继承它。包括 fs、net、 http 在内的,只要是支持事件响应的核心模块都是 EventEmitter 的子类。<br>为什么要这样做呢?原因有两点。首先,具有某个实体功能的对象实现事件符合语义, 事件的监听和发射应该是一个对象的方法。其次 JavaScript 的对象机制是基于原型的,支持 部分多重继承,继承 EventEmitter 不会打乱对象原有的继承关系。</p>
-<h2 id="Node-js进阶话题">Node.js进阶话题</h2>
-<p>核心模块拥有最高的加载优先级，换言之如果有模块与其命名冲突，<br>Node.js 总是会加载核心模块。</p>
-<p>BAD:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); </div><div class="line"><span class="keyword">var</span> files = [<span class="string">'a.txt'</span>, <span class="string">'b.txt'</span>, <span class="string">'c.txt'</span>]; </div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) { </div><div class="line"> fs.readFile(files[i], <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, contents)</span> </span>{ </div><div class="line"> <span class="built_in">console</span>.log(files); </div><div class="line"> <span class="built_in">console</span>.log(i); </div><div class="line"> <span class="built_in">console</span>.log(files[i]); </div><div class="line"> }); </div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>可以利用<br>JavaScript 函数式编程的特性，手动建立一个闭包：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) { </div><div class="line"> (<span class="function"><span class="keyword">function</span><span class="params">(i)</span> </span>{ </div><div class="line"> fs.readFile(files[i], <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, contents)</span> </span>{ </div><div class="line"> <span class="built_in">console</span>.log(files[i] + <span class="string">': '</span> + contents); </div><div class="line"> }); </div><div class="line"> })(i); </div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p><strong>我之前在这个地方，不是特别懂，其实因为他这个例子，用了(i)让我有一些误解，我们可以用以下</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {</div><div class="line">  (<span class="function"><span class="keyword">function</span> <span class="params">(idx)</span> </span>{</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">      <span class="built_in">console</span>.log(idx);</div><div class="line">    }, <span class="number">5</span>);</div><div class="line">  })(i);</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>cluster的功能是生成与当<br>前进程相同的子进程，并且允许父进程和子进程之间共享端口。Node.js 的另一个核心模块<br>child_process 也提供了相似的进程生成功能，但最大的区别在于cluster 允许跨进程端<br>口复用，给我们的网络服务器开发带来了很大的方便。</p>
-<h2 id="JS">JS</h2>
-<p>闭包(closure)是函数式编程中的概念,出现于 20 世纪 60 年代,最早实现闭包的语言<br>是 Scheme,它是 LISP 的一种方言。之后闭包特性被其他语言广泛吸纳。</p>
-<ol>
-<li>嵌套的回调函数</li>
-<li>实现私有成员<br>JavaScript通过约定在所有私有属性前加上下划线(例如_myPrivateProp), 表示这个属性是私有的</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> generateClosure = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{ <span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> get = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">count ++;</div><div class="line"><span class="keyword">return</span> count; };</div><div class="line">      <span class="keyword">return</span> get;</div><div class="line">    };</div><div class="line"><span class="keyword">var</span> counter = generateClosure(); <span class="built_in">console</span>.log(counter()); <span class="comment">// 输出 1 console.log(counter()); // 输出 2 console.log(counter()); // 输出 3</span></div></pre></td></tr></table></figure>
-
-<p>闭包的严格定义是“由函数（环境）及其封闭的自由变量组成的集合体。”</p>
-<h3 id="对象">对象</h3>
-<p>JavaScript 中的对象实际上就是一个由属性组成的关联数组,属性由名称和值组成,值 的类型可以是任何数据类型,或者函数和其他对象。注意JavaScript具有函数式编程的特性, 所以函数也是一种变量,大多数时候不用与一般的数据类型区分。</p>
-<p>call 和 apply 的功能是 以不同的对象作为上下文来调用某个函数。简而言之,就是允许一个对象去调用另一个对象 的成员函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someuser = {</div><div class="line">name: <span class="string">'byvoid'</span>,</div><div class="line">display: <span class="function"><span class="keyword">function</span><span class="params">(words)</span> </span>{</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' says '</span> + words); }</div><div class="line">};</div><div class="line"><span class="keyword">var</span> foo = { name: <span class="string">'foobar'</span></div><div class="line">};</div><div class="line">someuser.display.call(foo, <span class="string">'hello'</span>); <span class="comment">// 输出 foobar says hello</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someuser = { </div><div class="line">name: <span class="string">'byvoid'</span>, func: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">} };</div><div class="line"><span class="keyword">var</span> foo = { name: <span class="string">'foobar'</span></div><div class="line">};</div><div class="line">foo.func = someuser.func;</div><div class="line">foo.func(); <span class="comment">// 输出 foobar</span></div><div class="line">foo.func1 = someuser.func.bind(someuser);</div><div class="line">foo.func1(); <span class="comment">// 输出 byvoid func = someuser.func.bind(foo);</span></div><div class="line">func(); <span class="comment">// 输出 foobar func2 = func;</span></div><div class="line">func2(); <span class="comment">// 输出 foobar</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = {</div><div class="line">name: <span class="string">'byvoid'</span>, <span class="number">7</span> says: <span class="function"><span class="keyword">function</span><span class="params">(act, obj)</span> </span>{</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' '</span> + act + <span class="string">' '</span> + obj); }</div><div class="line">};</div><div class="line">person.says(<span class="string">'loves'</span>, <span class="string">'diovyb'</span>); <span class="comment">// 输出 byvoid loves diovyb</span></div><div class="line">byvoidLoves = person.says.bind(person, <span class="string">'loves'</span>); byvoidLoves(<span class="string">'you'</span>); <span class="comment">// 输出 byvoid loves you</span></div></pre></td></tr></table></figure>
-
-<p>TODO</p>
-<ul>
-<li>构造函数内定义的属性继承方式与原型不同，子对象需要显式调用父对象才能继承构<br>造函数内定义的属性。</li>
-<li>构造函数内定义的任何属性，包括函数在内都会被重复创</li>
-<li>同一个构造函数产生的<br>两个对象不共享实例。</li>
-<li>构造函数内定义的函数有运行时闭包的开销，因为构造函数内的局部变量对其中定义的函数来说也是可见的。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2014/10/08/Node-js开发指南-Learning-note/" data-id="j01s80s4e9nns8dh" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2014/10/08/Node-js开发指南-Learning-note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -788,7 +734,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -798,6 +744,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
+          </li>
         
           <li>
             <a href="/2014/12/31/Have-a-cup-of-coffee/">Have a cup of coffee</a>
@@ -813,10 +763,6 @@
         
           <li>
             <a href="/2014/12/28/我是如何堕落的/">我是怎么堕落的</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/18/这篇博客用来喷GFW/">这篇博客用来喷GFW</a>
           </li>
         
       </ul>
