@@ -67,6 +67,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Meteor™-Learning-Note" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/30/Meteor™-Learning-Note/" class="article-date">
+  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Dependency Tracking in Meteor: Computations<br>￼While Meteor is a real-time, reactive framework, not all of the code inside a Meteor app is reactive. If this were the case, your whole app would re-run every time anything changed. Instead, reactivity is limited to specific areas of your code, and we call these areas computations.<br>/client<br>Any files here are only served to the client. This is a good place to keep your HTML, CSS, and UI-related JavaScript code.</p>
+<p>/server<br>Any files in this directory are only used on the server, and are never sent to the client. Use /server to store source files with sensitive logic or data that should not be visible to the client.</p>
+<p>/public<br>Files in /public are served to the client as-is. Use this to store assets such as images. For example, if you have an image located at /public/background.png, you can include it in your HTML with <img src="/background.png"> or in your CSS with background-image:<br>url(/background.png). Note that /public is not part of the image URL.</p>
+<p>/private<br>These files can only be accessed by server code through Assets API and are not accessible to the client.</p>
+<h3 id="Link">Link</h3>
+<p><a href="http://docs.meteor.com/" target="_blank" rel="external">http://docs.meteor.com/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/" data-id="vdyat1ur1t56eaaa" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/01/19/hello-world/" class="article-date">
@@ -573,100 +619,6 @@
 
 
   
-    <article id="post-node-testing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/29/node-testing/" class="article-date">
-  <time datetime="2014-11-29T14:44:53.000Z" itemprop="datePublished">Nov 29 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/29/node-testing/">node-testing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>更新中...</code></p>
-<h1 id="Mocha">Mocha</h1>
-<p>Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser. For more information view the documentation.</p>
-<h3 id="Intro">Intro</h3>
-<p>搭建一个测试原型</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//f2e 是原型生成的目录</span></div><div class="line">mocha <span class="keyword">init</span> f2e</div></pre></td></tr></table></figure>
-
-<p>浏览器测试 饭桶js</p>
-<p><code>npm i -g mocha-phantomjs</code></p>
-<p>npm i 为npm install的缩写</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.mochaPhantomJS) { mochaPhantomJS.run(); }</div></pre></td></tr></table></figure>
-
-<p>出于应用健壮性的考量，针对前端 js 脚本的单元测试也非常重要。而前后端通吃，也是 mocha 的一大特点。</p>
-<h3 id="场景_Situation">场景 Situation</h3>
-<ul>
-<li>在我们现在的subcase项目中，统一了<code>ret_code</code>作为成功与否的标志，方便测试。</li>
-<li>HTTP Status testing Send HTTP requests, receive responses and check HTTP statuses</li>
-</ul>
-<h2 id="Example">Example</h2>
-<h3 id="Simple_example">Simple example</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should(),</div><div class="line">  scapegoat = <span class="built_in">require</span>(<span class="string">'../index'</span>),</div><div class="line">  <span class="built_in">escape</span> = scapegoat.escape,</div><div class="line">  <span class="built_in">unescape</span> = scapegoat.unescape;</div><div class="line"></div><div class="line">  describe(<span class="string">'#escape'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    it(<span class="string">'converts & into &amp;'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    <span class="built_in">escape</span>(<span class="string">'&'</span>).should.equal(<span class="string">'&amp;'</span>);</div><div class="line">  });</div></pre></td></tr></table></figure>
-
-<h3 id="API_Testing_Example">API Testing Example</h3>
-<p>from <a href="https://gist.github.com/vgheri/5430387#file-test-js" target="_blank" rel="external">https://gist.github.com/vgheri/5430387#file-test-js</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">  describe(<span class="string">'Account'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    it(<span class="string">'should return error trying to save duplicate username'</span>, <span class="function"><span class="keyword">function</span><span class="params">(done)</span> </span>{</div><div class="line">      <span class="keyword">var</span> profile = {</div><div class="line">        username: <span class="string">'vgheri'</span>,</div><div class="line">        password: <span class="string">'test'</span>,</div><div class="line">        firstName: <span class="string">'Valerio'</span>,</div><div class="line">        lastName: <span class="string">'Gheri'</span></div><div class="line">      };</div><div class="line">    <span class="comment">// once we have specified the info we want to send to the server via POST verb,</span></div><div class="line">    <span class="comment">// we need to actually perform the action on the resource, in this case we want to </span></div><div class="line">    <span class="comment">// POST on /api/profiles and we want to send some info</span></div><div class="line">    <span class="comment">// We do this using the request object, requiring supertest!</span></div><div class="line">    request(url)</div><div class="line">	.post(<span class="string">'/api/profiles'</span>)</div><div class="line">	.send(profile)</div><div class="line">    <span class="comment">// end handles the response</span></div><div class="line">	.end(<span class="function"><span class="keyword">function</span><span class="params">(err, res)</span> </span>{</div><div class="line">          <span class="keyword">if</span> (err) {</div><div class="line">            <span class="keyword">throw</span> err;</div><div class="line">          }</div><div class="line">          <span class="comment">// this is should.js syntax, very clear</span></div><div class="line">          res.should.have.status(<span class="number">400</span>);</div><div class="line">          done();</div><div class="line">        });</div><div class="line">    });</div><div class="line">    it(<span class="string">'should correctly update an existing account'</span>, <span class="function"><span class="keyword">function</span><span class="params">(done)</span></span>{</div><div class="line">	<span class="keyword">var</span> body = {</div><div class="line">		firstName: <span class="string">'JP'</span>,</div><div class="line">		lastName: <span class="string">'Berd'</span></div><div class="line">	};</div><div class="line">	request(url)</div><div class="line">		.put(<span class="string">'/api/profiles/vgheri'</span>)</div><div class="line">		.send(body)</div><div class="line">		.expect(<span class="string">'Content-Type'</span>, <span class="regexp">/json/</span>)</div><div class="line">		.expect(<span class="number">200</span>) <span class="comment">//Status code</span></div><div class="line">		.end(<span class="function"><span class="keyword">function</span><span class="params">(err,res)</span> </span>{</div><div class="line">			<span class="keyword">if</span> (err) {</div><div class="line">				<span class="keyword">throw</span> err;</div><div class="line">			}</div><div class="line">			<span class="comment">// Should.js fluent syntax applied</span></div><div class="line">			res.body.should.have.property(<span class="string">'_id'</span>);</div><div class="line">	                res.body.firstName.should.equal(<span class="string">'JP'</span>);</div><div class="line">	                res.body.lastName.should.equal(<span class="string">'Berd'</span>);                    </div><div class="line">	                res.body.creationDate.should.not.equal(<span class="literal">null</span>);</div><div class="line">			done();</div><div class="line">		});</div><div class="line">	});</div><div class="line">  });</div><div class="line">});</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'#index'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">  it(<span class="string">'should get /topic/:tid 200'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(done)</span> </span>{</div><div class="line">    request.<span class="keyword">get</span>(<span class="string">'/topic/'</span> + support.testTopic._id)</div><div class="line">    .expect(<span class="number">200</span>, <span class="function"><span class="keyword">function</span> <span class="params">(err, res)</span> </span>{</div><div class="line">      res.text.should.containEql(<span class="string">'test topic content'</span>);</div><div class="line">      res.text.should.containEql(<span class="string">'alsotang'</span>);</div><div class="line">      done(err);</div><div class="line">    });</div><div class="line">  });</div></pre></td></tr></table></figure>
-
-<p>涉及到插入的时候，之前写rspec也遇到类似的<br>的情况，可以通过测试count是否增加1。</p>
-<h3 id="Fun">Fun</h3>
-<p><code>mocha -R nyan</code> and whole lots of other stuff.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1   -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__,------,</div><div class="line">0   -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-__|  /\_/\</div><div class="line">0   -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_~|_( ^ .^)</div><div class="line">    -<span class="ruby"><span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span>-<span class="number">_</span> <span class="string">""</span>  <span class="string">""</span></span></div><div class="line"></div><div class="line"> 1 passing (141ms)</div></pre></td></tr></table></figure>
-
-<h1 id="Chai">Chai</h1>
-<p>Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">Should</div><div class="line"></div><div class="line">chai.should();</div><div class="line"></div><div class="line">foo.should.be.a(<span class="string">'string'</span>);</div><div class="line">foo.should.equal(<span class="string">'bar'</span>);</div><div class="line">foo.should.have.length(<span class="number">3</span>);</div><div class="line">tea.should.have.property(<span class="string">'flavors'</span>)</div><div class="line">  .with.length(<span class="number">3</span>);</div><div class="line">  </div><div class="line">Expect</div><div class="line"></div><div class="line"><span class="keyword">var</span> expect = chai.expect;</div><div class="line"></div><div class="line">expect(foo).to.be.a(<span class="string">'string'</span>);</div><div class="line">expect(foo).to.equal(<span class="string">'bar'</span>);</div><div class="line">expect(foo).to.have.length(<span class="number">3</span>);</div><div class="line">expect(tea).to.have.property(<span class="string">'flavors'</span>)</div><div class="line">  .with.length(<span class="number">3</span>);</div><div class="line"></div><div class="line">Assert</div><div class="line"></div><div class="line"><span class="keyword">var</span> assert = chai.assert;</div><div class="line"></div><div class="line">assert.typeOf(foo, <span class="string">'string'</span>);</div><div class="line">assert.equal(foo, <span class="string">'bar'</span>);</div><div class="line">assert.lengthOf(foo, <span class="number">3</span>)</div><div class="line">assert.property(tea, <span class="string">'flavors'</span>);</div><div class="line">assert.lengthOf(tea.flavors, <span class="number">3</span>);</div></pre></td></tr></table></figure>
-
-<h1 id="SuperTest">SuperTest</h1>
-<h1 id="Miscs">Miscs</h1>
-<p>Be kind and don’t make developers hunt around in your docs to figure out how to run the tests, add a make test target to your Makefile - TJ</p>
-<h1 id="Nock">Nock</h1>
-<p>Nock is an HTTP mocking library that can record HTTP calls and play them back, so that you can either mock an API by hand, or just record actual HTTP calls and use their responses in future test runs. Our orchestrate.js library does the former, but I’ll show you how to do the latter.</p>
-<h3 id="转自链接">转自链接</h3>
-<ul>
-<li><a href="https://github.com/alsotang/node-lessons/tree/master/lesson7" target="_blank" rel="external">https://github.com/alsotang/node-lessons/tree/master/lesson7</a></li>
-<li><a href="https://github.com/zzz6519003/my_first_node_module" target="_blank" rel="external">https://github.com/zzz6519003/my_first_node_module</a></li>
-<li><a href="http://chaijs.com/" target="_blank" rel="external">http://chaijs.com/</a></li>
-<li><a href="https://orchestrate.io/blog/2014/06/13/how-to-test-code-that-uses-http-apis-using-node-js-mocha-and-nock/" target="_blank" rel="external">https://orchestrate.io/blog/2014/06/13/how-to-test-code-that-uses-http-apis-using-node-js-mocha-and-nock/</a></li>
-<li><a href="http://strongloop.com/strongblog/how-to-test-an-api-with-node-js/" target="_blank" rel="external">http://strongloop.com/strongblog/how-to-test-an-api-with-node-js/</a></li>
-<li><a href="http://beletsky.net/2014/03/testable-apis-with-node-dot-js.html" target="_blank" rel="external">http://beletsky.net/2014/03/testable-apis-with-node-dot-js.html</a></li>
-<li><a href="https://gist.github.com/vgheri/5430387#file-test-js" target="_blank" rel="external">https://gist.github.com/vgheri/5430387#file-test-js</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2014/11/29/node-testing/" data-id="bm3fb5cjqycl7wcl" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2014/11/29/node-testing/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -682,7 +634,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP/">APP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP/">APP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -700,7 +652,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -710,6 +662,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
+          </li>
         
           <li>
             <a href="/2015/01/19/hello-world/">Hello World</a>
@@ -725,10 +681,6 @@
         
           <li>
             <a href="/2014/12/30/Instapaper™-VS-Pocket™/">Instapaper™ VS Pocket™</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/">Difference of Facebook and China&#39;s FB</a>
           </li>
         
       </ul>
