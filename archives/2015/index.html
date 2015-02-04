@@ -67,6 +67,100 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-天朝上网手册-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/04/天朝上网手册-持续更新/" class="article-date">
+  <time datetime="2015-02-04T15:48:38.000Z" itemprop="datePublished">Feb 4 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/04/天朝上网手册-持续更新/">天朝上网手册(持续更新)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文写给我的妹妹。</p>
+<p>墙内的互联网有如大屎缸。<br>推荐把时间浪费在以下网站。</p>
+<ul>
+<li>​玩玩社交网络，国外玩facebook, pinterest, twitter, 国内没办法只能玩renren了，多认识些有共同爱好的人。还能防寂寞</li>
+<li>Google 如果你想得到最好的搜索质量，请用英文搜索。baidu的搜索质量极其low。</li>
+<li>Quora quora is the best source of knowledge 提提问题，交交朋友，练习英语还有老外帮你改语法错误和单词拼写错误。​ 玩法是先关注些你喜欢的话题。</li>
+<li><a href="https://speakerdeck.com/" target="_blank" rel="external">https://speakerdeck.com/</a> 和 <a href="http://www.slideshare.net/" target="_blank" rel="external">http://www.slideshare.net/</a> 好的 slide给你大方向的指导。​</li>
+<li><a href="https://www.coursera.org/" target="_blank" rel="external">https://www.coursera.org/</a> 在网上免费学习全世界最好的课程。</li>
+<li>www.zhihu.com 中国版quora。玩法是先关注些你喜欢的话题。</li>
+<li>www.reddit.com 找​开心</li>
+<li>豆瓣 标记你每看过的一本书或电影。</li>
+</ul>
+<p>! 网址打不开的时候用~云梯~ <a href="https://www.yunti.me" target="_blank" rel="external">https://www.yunti.me</a>   如果这个都打不开，我帮你买。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/02/04/天朝上网手册-持续更新/" data-id="46m45yhb5hvl9hxe" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/02/04/天朝上网手册-持续更新/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Jibber-about-workship-with-leader" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/03/Jibber-about-workship-with-leader/" class="article-date">
+  <time datetime="2015-02-03T08:01:56.000Z" itemprop="datePublished">Feb 3 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/03/Jibber-about-workship-with-leader/">Jibber about workship with leader</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I find people in the south</p>
+<h3 id="Tools">Tools</h3>
+<h3 id="Techs">Techs</h3>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/02/03/Jibber-about-workship-with-leader/" data-id="5tdxmzsyfh3v4lxe" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/02/03/Jibber-about-workship-with-leader/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Meteor™-Learning-Note" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/01/30/Meteor™-Learning-Note/" class="article-date">
@@ -90,6 +184,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Dependency Tracking in Meteor: Computations<br>￼While Meteor is a real-time, reactive framework, not all of the code inside a Meteor app is reactive. If this were the case, your whole app would re-run every time anything changed. Instead, reactivity is limited to specific areas of your code, and we call these areas computations.<br>/client<br>Any files here are only served to the client. This is a good place to keep your HTML, CSS, and UI-related JavaScript code.</p>
+<p>When Should We Use observe()?<br>Using the above pattern is sometimes necessary, especially when dealing with third-party widgets. For example, let’s imagine we want to add or remove pins on a map in real time based on Collection data (say, to show the locations of currently logged in users).<br>In such cases, you’ll need to use observe() callbacks in order to get the map to “talk” with the Meteor collection and know how to react to data changes. For example, you would rely on the added and removed callbacks to call the map API’s own dropPin() or removePin() methods.</p>
 <p>/server<br>Any files in this directory are only used on the server, and are never sent to the client. Use /server to store source files with sensitive logic or data that should not be visible to the client.</p>
 <p>/public<br>Files in /public are served to the client as-is. Use this to store assets such as images. For example, if you have an image located at /public/background.png, you can include it in your HTML with <img src="/background.png"> or in your CSS with background-image:<br>url(/background.png). Note that /public is not part of the image URL.</p>
 <p>/private<br>These files can only be accessed by server code through Assets API and are not accessible to the client.</p>
@@ -218,7 +313,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP/">APP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APP/">APP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design/">Design</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GFW/">GFW</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Product/">Product</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TODO/">TODO</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -227,7 +322,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/APP/" style="font-size: 13.33px;">APP</a><a href="/tags/Design/" style="font-size: 16.67px;">Design</a><a href="/tags/GFW/" style="font-size: 13.33px;">GFW</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/Life/" style="font-size: 13.33px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 16.67px;">Node</a><a href="/tags/Product/" style="font-size: 16.67px;">Product</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a><a href="/tags/iOS/" style="font-size: 16.67px;">iOS</a>
+      <a href="/tags/APP/" style="font-size: 13.33px;">APP</a><a href="/tags/Design/" style="font-size: 16.67px;">Design</a><a href="/tags/GFW/" style="font-size: 13.33px;">GFW</a><a href="/tags/Javascript/" style="font-size: 13.33px;">Javascript</a><a href="/tags/Life/" style="font-size: 16.67px;">Life</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life TODO</a><a href="/tags/Life-TODO/" style="font-size: 10.00px;">Life, TODO</a><a href="/tags/Node/" style="font-size: 16.67px;">Node</a><a href="/tags/Product/" style="font-size: 16.67px;">Product</a><a href="/tags/TODO/" style="font-size: 20.00px;">TODO</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO GFW</a><a href="/tags/TODO-GFW/" style="font-size: 10.00px;">TODO, GFW</a><a href="/tags/iOS/" style="font-size: 16.67px;">iOS</a>
     </div>
   </div>
 
@@ -236,7 +331,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -248,6 +343,14 @@
       <ul>
         
           <li>
+            <a href="/2015/02/04/天朝上网手册-持续更新/">天朝上网手册(持续更新)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/03/Jibber-about-workship-with-leader/">Jibber about workship with leader</a>
+          </li>
+        
+          <li>
             <a href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
           </li>
         
@@ -257,14 +360,6 @@
         
           <li>
             <a href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/31/Have-a-cup-of-coffee/">Have a cup of coffee</a>
-          </li>
-        
-          <li>
-            <a href="/2014/12/30/Instapaper™-VS-Pocket™/">Instapaper™ VS Pocket™</a>
           </li>
         
       </ul>
