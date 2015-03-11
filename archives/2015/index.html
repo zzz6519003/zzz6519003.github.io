@@ -67,430 +67,188 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Let-s-talk-about-PHP" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/09/Let-s-talk-about-PHP/" class="article-date">
-  <time datetime="2015-03-09T09:52:58.000Z" itemprop="datePublished">Mar 9 2015</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/03/09/Let-s-talk-about-PHP/" class="archive-article-date">
+  <time datetime="2015-03-09T09:52:58.000Z" itemprop="datePublished">Mar 9</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP</a>
+      <a class="archive-article-title" href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/03/09/Let-s-talk-about-PHP/" data-id="i24z5wuisbhoup2l" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/03/09/Let-s-talk-about-PHP/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-面试小记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/27/面试小记/" class="article-date">
-  <time datetime="2015-02-27T15:47:39.000Z" itemprop="datePublished">Feb 27 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/02/27/面试小记/" class="archive-article-date">
+  <time datetime="2015-02-27T15:47:39.000Z" itemprop="datePublished">Feb 27</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/27/面试小记/">面试小记</a>
+      <a class="archive-article-title" href="/2015/02/27/面试小记/">面试小记</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>js this的作用域<br>A function’s this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode.</p>
-</li>
-<li><p>内连接&amp;左连接的区别<br>例子：   </p>
-</li>
-</ol>
-<hr>
-<p>  a表     id   name     b表     id   job   parent_id<br>              1   张3                   1     23     1<br>              2   李四                 2     34     2<br>              3   王武                 3     34     4<br>  a.id同parent_id   存在关系   </p>
-<hr>
-<p> 1） 内连接<br>  select   a.<em>,b.</em>   from   a   inner   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2   </p>
-<p>  2）左连接<br>  select   a.<em>,b.</em>   from   a   left   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  3   王武                  null   </p>
-<p> 3） 右连接<br>  select   a.<em>,b.</em>   from   a   right   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  null                       3     34     4   </p>
-<p> 4） 完全连接<br>  select   a.<em>,b.</em>   from   a   full   join   b     on   a.id=b.parent_id   </p>
-<p>  结果是<br>  1   张3                  1     23     1<br>  2   李四                 2     34     2<br>  null               　　  3     34     4<br>  3   王武                 null</p>
-<ol>
-<li><p>=&gt; in coffee script<br>The fat arrow =&gt; can be used to both define a function, and to bind it to the current value of this, right on the spot. This is helpful when using callback-based libraries like Prototype or jQuery, for creating iterator functions to pass to each, or event-handler functions to use with bind. Functions created with the fat arrow are able to access properties of the this where they’re defined.</p>
-</li>
-<li><p>浅拷贝和深拷贝<br>这个问题我跟面试官聊，感觉他是不是有对这个概念理解有点过头了。<br>Shallow copies duplicate as little as possible. A shallow copy of a collection is a copy of the collection structure, not the elements. With a shallow copy, two collections now share the individual elements.</p>
-</li>
-</ol>
-<p>Deep copies duplicate everything. A deep copy of a collection is two collections with all of the elements in the original collection duplicated.</p>
-<h3 id="Links">Links</h3>
-<p><a href="http://stackoverflow.com/questions/337878/var-self-this" target="_blank" rel="external">http://stackoverflow.com/questions/337878/var-self-this</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/02/27/面试小记/" data-id="uircbur1q1sozj4o" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/02/27/面试小记/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-Head-First-Design-Pattern-Book-Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/13/Head-First-Design-Pattern-Book-Note/" class="article-date">
-  <time datetime="2015-02-13T13:57:41.000Z" itemprop="datePublished">Feb 13 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/02/13/Head-First-Design-Pattern-Book-Note/" class="archive-article-date">
+  <time datetime="2015-02-13T13:57:41.000Z" itemprop="datePublished">Feb 13</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/13/Head-First-Design-Pattern-Book-Note/">Head First Design Pattern Book Note</a>
+      <a class="archive-article-title" href="/2015/02/13/Head-First-Design-Pattern-Book-Note/">Head First Design Pattern Book Note</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/02/13/Head-First-Design-Pattern-Book-Note/" data-id="k571bz15uqlwcs4q" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/02/13/Head-First-Design-Pattern-Book-Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-Classifying-data-note-practice" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/08/Classifying-data-note-practice/" class="article-date">
-  <time datetime="2015-02-08T15:16:41.000Z" itemprop="datePublished">Feb 8 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/02/08/Classifying-data-note-practice/" class="archive-article-date">
+  <time datetime="2015-02-08T15:16:41.000Z" itemprop="datePublished">Feb 8</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/08/Classifying-data-note-practice/">Classifying data note/practice</a>
+      <a class="archive-article-title" href="/2015/02/08/Classifying-data-note-practice/">Classifying data note/practice</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Example: a handwriting recognition system</p>
-<p>Example: using kNN on a handwriting recognition system.</p>
-<ol>
-<li>Collect: Text file provided.</li>
-<li>Prepare: Write a function to convert from the image format to the list format<br>used in our classifier, classify0().</li>
-<li>Analyze: We’ll look at the prepared data in the Python shell to make sure it’s<br>correct.</li>
-<li>Train: Doesn’t apply to the kNN algorithm.</li>
-<li>Test: Write a function to use some portion of the data as test examples. The test examples are classified against the non-test examples. If the predicted class doesn’t match the real class, you’ll count that as an error.</li>
-<li>Use: Not performed in this example. You could build a complete program to extract digits from an image, such a system used to sort the mail in the United States.</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/02/08/Classifying-data-note-practice/" data-id="g200eq4a0eprjkcx" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/02/08/Classifying-data-note-practice/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-天朝上网手册-持续更新" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/04/天朝上网手册-持续更新/" class="article-date">
-  <time datetime="2015-02-04T15:48:38.000Z" itemprop="datePublished">Feb 4 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/02/04/天朝上网手册-持续更新/" class="archive-article-date">
+  <time datetime="2015-02-04T15:48:38.000Z" itemprop="datePublished">Feb 4</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/04/天朝上网手册-持续更新/">天朝上网手册(持续更新)</a>
+      <a class="archive-article-title" href="/2015/02/04/天朝上网手册-持续更新/">天朝上网手册(持续更新)</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文写给我的妹妹。</p>
-<p>墙内的互联网有如大屎缸。<br>推荐把时间浪费在以下网站。</p>
-<ul>
-<li>​玩玩社交网络，国外玩facebook, pinterest, twitter, 国内没办法只能玩renren了，多认识些有共同爱好的人。还能防寂寞</li>
-<li>Google 如果你想得到最好的搜索质量，请用英文搜索。baidu的搜索质量极其low。</li>
-<li>Quora quora is the best source of knowledge 提提问题，交交朋友，练习英语还有老外帮你改语法错误和单词拼写错误。​ 玩法是先关注些你喜欢的话题。</li>
-<li><a href="https://speakerdeck.com/" target="_blank" rel="external">https://speakerdeck.com/</a> 和 <a href="http://www.slideshare.net/" target="_blank" rel="external">http://www.slideshare.net/</a> 好的 slide给你大方向的指导。​</li>
-<li><a href="https://www.coursera.org/" target="_blank" rel="external">https://www.coursera.org/</a> 在网上免费学习全世界最好的课程。</li>
-<li>www.zhihu.com 中国版quora。玩法是先关注些你喜欢的话题。</li>
-<li>www.reddit.com 找​开心</li>
-<li>豆瓣 标记你每看过的一本书或电影。</li>
-</ul>
-<p>! 网址打不开的时候用~云梯~ <a href="https://www.yunti.me" target="_blank" rel="external">https://www.yunti.me</a>   如果这个都打不开，我帮你买。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/02/04/天朝上网手册-持续更新/" data-id="46m45yhb5hvl9hxe" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/02/04/天朝上网手册-持续更新/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-Jibber-about-workship-with-leader" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/03/Jibber-about-workship-with-leader/" class="article-date">
-  <time datetime="2015-02-03T08:01:56.000Z" itemprop="datePublished">Feb 3 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/02/03/Jibber-about-workship-with-leader/" class="archive-article-date">
+  <time datetime="2015-02-03T08:01:56.000Z" itemprop="datePublished">Feb 3</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/03/Jibber-about-workship-with-leader/">Jibber about the art about workship with leader</a>
+      <a class="archive-article-title" href="/2015/02/03/Jibber-about-workship-with-leader/">Jibber about the art about workship with leader</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I find people in the south</p>
-<h3 id="Tools">Tools</h3>
-<h3 id="Techs">Techs</h3>
-<h3 id="What_exaclty_are_you_gonna_do">What exaclty are you gonna do</h3>
-<h3 id="Go_home_to_work">Go home to work</h3>
-<h3 id="The_first_price_matters_a_lot,_be_sure_to_get_an_idea_price_for_1_year-">The first price matters a lot, be sure to get an idea price for 1 year.</h3>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/02/03/Jibber-about-workship-with-leader/" data-id="5tdxmzsyfh3v4lxe" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/02/03/Jibber-about-workship-with-leader/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-Meteor™-Learning-Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/30/Meteor™-Learning-Note/" class="article-date">
-  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/30/Meteor™-Learning-Note/" class="archive-article-date">
+  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
+      <a class="archive-article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Dependency Tracking in Meteor: Computations<br>￼While Meteor is a real-time, reactive framework, not all of the code inside a Meteor app is reactive. If this were the case, your whole app would re-run every time anything changed. Instead, reactivity is limited to specific areas of your code, and we call these areas computations.<br>/client<br>Any files here are only served to the client. This is a good place to keep your HTML, CSS, and UI-related JavaScript code.</p>
-<p>When Should We Use observe()?<br>Using the above pattern is sometimes necessary, especially when dealing with third-party widgets. For example, let’s imagine we want to add or remove pins on a map in real time based on Collection data (say, to show the locations of currently logged in users).<br>In such cases, you’ll need to use observe() callbacks in order to get the map to “talk” with the Meteor collection and know how to react to data changes. For example, you would rely on the added and removed callbacks to call the map API’s own dropPin() or removePin() methods.</p>
-<p>/server<br>Any files in this directory are only used on the server, and are never sent to the client. Use /server to store source files with sensitive logic or data that should not be visible to the client.</p>
-<p>/public<br>Files in /public are served to the client as-is. Use this to store assets such as images. For example, if you have an image located at /public/background.png, you can include it in your HTML with <img src="/background.png"> or in your CSS with background-image:<br>url(/background.png). Note that /public is not part of the image URL.</p>
-<p>/private<br>These files can only be accessed by server code through Assets API and are not accessible to the client.</p>
-<h3 id="Link">Link</h3>
-<p><a href="http://docs.meteor.com/" target="_blank" rel="external">http://docs.meteor.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/" data-id="vdyat1ur1t56eaaa" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/19/hello-world/" class="article-date">
-  <time datetime="2015-01-19T15:45:02.000Z" itemprop="datePublished">Jan 19 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/19/hello-world/" class="archive-article-date">
+  <time datetime="2015-01-19T15:45:02.000Z" itemprop="datePublished">Jan 19</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/19/hello-world/">Hello World</a>
+      <a class="archive-article-title" href="/2015/01/19/hello-world/">Hello World</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">Fuck it... it<span class="string">'s hexo n</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">Go fuck your self hexo g!</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div><div class="line">hexo d..............OK???</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/19/hello-world/" data-id="u1q1rd70ehmejgbe" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/19/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-slack作为团队交流工具的好处" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/13/slack作为团队交流工具的好处/" class="article-date">
-  <time datetime="2015-01-13T02:33:47.000Z" itemprop="datePublished">Jan 13 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/13/slack作为团队交流工具的好处/" class="archive-article-date">
+  <time datetime="2015-01-13T02:33:47.000Z" itemprop="datePublished">Jan 13</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
+      <a class="archive-article-title" href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我觉得程序员们先进性的一个很大体现在于沟通工具，方式的先进。<br>团队一旦变大，沟通成本就会明显<em>bigger than bigger</em>。</p>
-<p>我认为在线沟通和异步沟通 是最长久和有效率的方法。</p>
-<p>slack与普通工具例如bqq相比的好处：</p>
-<p>场景1：讨论组里 拉了一个人 他需要知道上下文，人们一般都是找一个人发一下聊天历史记录。如果slack 他直接可以看到聊天历史</p>
-<p>场景2 : 有人说错话了  想要收回那句话，用slack可以直接编辑，而且有一个小细节我特别喜欢的是，如果一个人迅速发了好几句碎言碎语，slack会把这些话作为一句话。</p>
-<p>场景3：公司里有想主动找事做的人，想要知道大家在做什么。slack里有各种channel可以建立，比如我之前看过一篇holman的博客，Github有好几十个频道，每一个channel可以代表一个正在做的项目，public的channel是大家都可以参加的项目。<br>How GitHub Works: Be Asynchronous<br><a href="http://zachholman.com/posts/how-github-works-asynchronous" target="_blank" rel="external">http://zachholman.com/posts/how-github-works-asynchronous</a><br>吐血打滚推荐这篇文章</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/" data-id="g5cu0lqpqdbjpatk" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
+  
+    </div></section>
   
 </section>
         

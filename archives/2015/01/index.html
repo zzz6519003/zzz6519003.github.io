@@ -67,147 +67,74 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Meteor™-Learning-Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/30/Meteor™-Learning-Note/" class="article-date">
-  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30 2015</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/30/Meteor™-Learning-Note/" class="archive-article-date">
+  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
+      <a class="archive-article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Dependency Tracking in Meteor: Computations<br>￼While Meteor is a real-time, reactive framework, not all of the code inside a Meteor app is reactive. If this were the case, your whole app would re-run every time anything changed. Instead, reactivity is limited to specific areas of your code, and we call these areas computations.<br>/client<br>Any files here are only served to the client. This is a good place to keep your HTML, CSS, and UI-related JavaScript code.</p>
-<p>When Should We Use observe()?<br>Using the above pattern is sometimes necessary, especially when dealing with third-party widgets. For example, let’s imagine we want to add or remove pins on a map in real time based on Collection data (say, to show the locations of currently logged in users).<br>In such cases, you’ll need to use observe() callbacks in order to get the map to “talk” with the Meteor collection and know how to react to data changes. For example, you would rely on the added and removed callbacks to call the map API’s own dropPin() or removePin() methods.</p>
-<p>/server<br>Any files in this directory are only used on the server, and are never sent to the client. Use /server to store source files with sensitive logic or data that should not be visible to the client.</p>
-<p>/public<br>Files in /public are served to the client as-is. Use this to store assets such as images. For example, if you have an image located at /public/background.png, you can include it in your HTML with <img src="/background.png"> or in your CSS with background-image:<br>url(/background.png). Note that /public is not part of the image URL.</p>
-<p>/private<br>These files can only be accessed by server code through Assets API and are not accessible to the client.</p>
-<h3 id="Link">Link</h3>
-<p><a href="http://docs.meteor.com/" target="_blank" rel="external">http://docs.meteor.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/" data-id="vdyat1ur1t56eaaa" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/19/hello-world/" class="article-date">
-  <time datetime="2015-01-19T15:45:02.000Z" itemprop="datePublished">Jan 19 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/19/hello-world/" class="archive-article-date">
+  <time datetime="2015-01-19T15:45:02.000Z" itemprop="datePublished">Jan 19</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/19/hello-world/">Hello World</a>
+      <a class="archive-article-title" href="/2015/01/19/hello-world/">Hello World</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">Fuck it... it<span class="string">'s hexo n</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">Go fuck your self hexo g!</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div><div class="line">hexo d..............OK???</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/19/hello-world/" data-id="u1q1rd70ehmejgbe" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/19/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
-    <article id="post-slack作为团队交流工具的好处" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/13/slack作为团队交流工具的好处/" class="article-date">
-  <time datetime="2015-01-13T02:33:47.000Z" itemprop="datePublished">Jan 13 2015</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/13/slack作为团队交流工具的好处/" class="archive-article-date">
+  <time datetime="2015-01-13T02:33:47.000Z" itemprop="datePublished">Jan 13</time>
 </a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
+      <a class="archive-article-title" href="/2015/01/13/slack作为团队交流工具的好处/">slack作为团队交流工具的好处</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我觉得程序员们先进性的一个很大体现在于沟通工具，方式的先进。<br>团队一旦变大，沟通成本就会明显<em>bigger than bigger</em>。</p>
-<p>我认为在线沟通和异步沟通 是最长久和有效率的方法。</p>
-<p>slack与普通工具例如bqq相比的好处：</p>
-<p>场景1：讨论组里 拉了一个人 他需要知道上下文，人们一般都是找一个人发一下聊天历史记录。如果slack 他直接可以看到聊天历史</p>
-<p>场景2 : 有人说错话了  想要收回那句话，用slack可以直接编辑，而且有一个小细节我特别喜欢的是，如果一个人迅速发了好几句碎言碎语，slack会把这些话作为一句话。</p>
-<p>场景3：公司里有想主动找事做的人，想要知道大家在做什么。slack里有各种channel可以建立，比如我之前看过一篇holman的博客，Github有好几十个频道，每一个channel可以代表一个正在做的项目，public的channel是大家都可以参加的项目。<br>How GitHub Works: Be Asynchronous<br><a href="http://zachholman.com/posts/how-github-works-asynchronous" target="_blank" rel="external">http://zachholman.com/posts/how-github-works-asynchronous</a><br>吐血打滚推荐这篇文章</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/" data-id="g5cu0lqpqdbjpatk" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/13/slack作为团队交流工具的好处/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
 </article>
-
-
   
+  
+    </div></section>
   
 </section>
         
