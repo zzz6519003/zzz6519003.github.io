@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Let&#39;s talk about PHP | 男哥https://github.com/zzz6519003</title>
+  <title>Let&#39;s talk about PHP, Book Note | 男哥https://github.com/zzz6519003</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.">
+  <meta name="description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.
+Integration with Web Pages
+One of the greatest features of PHP is that it gives you the ability to gener">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Let's talk about PHP">
+<meta property="og:title" content="Let's talk about PHP, Book Note">
 <meta property="og:url" content="http://zzz6519003.github.io/2015/03/09/Let-s-talk-about-PHP/">
 <meta property="og:site_name" content="男哥https://github.com/zzz6519003">
-<meta property="og:description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.">
+<meta property="og:description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.
+Integration with Web Pages
+One of the greatest features of PHP is that it gives you the ability to gener">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Let's talk about PHP">
-<meta name="twitter:description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.">
+<meta name="twitter:title" content="Let's talk about PHP, Book Note">
+<meta name="twitter:description" content="Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.
+Integration with Web Pages
+One of the greatest features of PHP is that it gives you the ability to gener">
 
   
     <link rel="alternative" href="/atom.xml" title="男哥https://github.com/zzz6519003" type="application/atom+xml">
@@ -79,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Let&#39;s talk about PHP
+      Let&#39;s talk about PHP, Book Note
     </h1>
   
 
@@ -88,6 +94,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Recently I’ve been watching some “PHP, the good part”, here’s some thing i think good in it XD.</p>
+<h2 id="Integration_with_Web_Pages">Integration with Web Pages</h2>
+<p>One of the greatest features of PHP is that it gives you the ability to generate HTML based on integration with a web server, be that Apache, IIS, or any other leading web server. </p>
+<h3 id="$_GET">$_GET</h3>
+<p>The next superglobal entity to discuss is $_GET. The $_GET value is created automatically with the existence of a query string within a URL, or if a form is submitted with the</p>
+<p><em>It’s important to understand that the $_GET array is refreshed on each page call, so you have to pass it on to each page being called further down the call stack. It’s different than the session concept in this regard.
+</em></p>
+<h3 id="$_POST">$_POST</h3>
+<h3 id="$_REQUEST">$_REQUEST</h3>
+<p><em>You can control the overall environment of superglobal arrays with the php.ini directive known as variables_order. The setting on my server is GPC. This means that the arrays are loaded and created in GET, POST, and COOKIE order, with the latter elements taking precedence over the former if they are similarly named. The “G” stands for GET, the “P” for POST, and the “C” is for cookie. If you remove one of the letters in GPC, save the .ini file and restart your server. The array rep- resented by that letter will not be created in the superglobal space on the web server.</em></p>
 
       
     </div>
@@ -160,7 +175,7 @@
       <ul>
         
           <li>
-            <a href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP</a>
+            <a href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP, Book Note</a>
           </li>
         
           <li>
