@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Node | 男哥https://github.com/zzz6519003</title>
+  <title>男哥https://github.com/zzz6519003</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="精力旺盛 欲火焚身">
 <meta property="og:type" content="website">
 <meta property="og:title" content="男哥https://github.com/zzz6519003">
-<meta property="og:url" content="http://zzz6519003.github.io/tags/Node/">
+<meta property="og:url" content="http://zzz6519003.github.io/page/3/">
 <meta property="og:site_name" content="男哥https://github.com/zzz6519003">
 <meta property="og:description" content="精力旺盛 欲火焚身">
 <meta name="twitter:card" content="summary">
@@ -66,138 +66,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-Learning-Node-Book-Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/14/Learning-Node-Book-Note/" class="article-date">
-  <time datetime="2015-03-14T11:03:34.000Z" itemprop="datePublished">Mar 14 2015</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/14/Learning-Node-Book-Note/">Learning Node - Book Note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/03/14/Learning-Node-Book-Note/" data-id="gxxk1z65erfh8w3n" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/03/14/Learning-Node-Book-Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-《九浅一深node-js》Book Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/28/《九浅一深node-js》Book Note/" class="article-date">
-  <time datetime="2014-10-28T10:12:04.000Z" itemprop="datePublished">Oct 28 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/28/《九浅一深node-js》Book Note/">《九浅一深node.js》Book Note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>更新中。。。</code></p>
-<h2 id="模块机制">模块机制</h2>
-<ul>
-<li>CommonJS希望JS可以在任何地方运行。</li>
-<li>exports是唯一导出的接口，在模块中有一个module对象，代表自己，而exports就是module的属性。</li>
-<li>require允许不包含扩展名，会按照.js, .node, .json尝试。</li>
-<li>同步配合缓存，可以大幅度缓解Node单线程阻塞调用的缺陷。</li>
-<li>18 ~ </li>
-</ul>
-<h2 id="异步I/O">异步I/O</h2>
-<ul>
-<li>I/O disctributed I/O is pretty expensive</li>
-<li>The cost of multi-thread when you create thread, and switch between them is expensive.</li>
-<li>Asynchronous I/O</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">App             OS</div><div class="line"></div><div class="line">I/O call------&gt; process request</div><div class="line">               /<span class="string">||</span></div><div class="line">other call      <span class="string">||</span></div><div class="line">                <span class="string">||</span></div><div class="line">                <span class="string">||</span></div><div class="line">                <span class="string">||/</span></div><div class="line">callback        process done</div></pre></td></tr></table></figure>
-
-<ul>
-<li>repeatly to call I/O is 轮询</li>
-<li>55 ~</li>
-</ul>
-<h2 id="Asynchronous_Programming">Asynchronous Programming</h2>
-<p><code>Continuation Passing Style</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">(x, bar)</span> </span>{</div><div class="line">  <span class="keyword">return</span> bar(x);</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>业务重点由返回值转移到了毁掉函数中。</p>
-<ul>
-<li><code>偏函数</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> toString = <span class="built_in">Object</span>.prototype.toString;</div><div class="line"><span class="keyword">var</span> isString = <span class="function"><span class="keyword">function</span><span class="params">(obj)</span> </span>{</div><div class="line">  <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object string]'</span>;</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">var</span> isType = <span class="function"><span class="keyword">function</span><span class="params">(type)</span> </span>{</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(obj)</span> </span>{</div><div class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object'</span> + type + <span class="string">']'</span>;</div><div class="line">  };</div><div class="line">};</div></pre></td></tr></table></figure>
-
-<ul>
-<li>雪崩就是高访问并发的时候大量请求同时涌入数据库。<br>用事件队列解决</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"><span class="keyword">var</span> status = <span class="string">"ready"</span>;</div><div class="line"><span class="keyword">var</span> select = <span class="function"><span class="keyword">function</span><span class="params">(callback)</span> </span>{</div><div class="line">  proxy.once(<span class="string">"selected"</span>, callback);</div><div class="line">  <span class="keyword">if</span> (status == <span class="string">"ready"</span>) {</div><div class="line">    status = <span class="string">"pending"</span>;</div><div class="line">    db.select(<span class="string">"SQL"</span>, <span class="function"><span class="keyword">function</span><span class="params">(results)</span> </span>{</div><div class="line">      proxy.emits(<span class="string">"selected"</span>, results);</div><div class="line">      status = <span class="string">"ready"</span>;</div><div class="line">    });</div><div class="line">  }</div><div class="line">};</div><div class="line"><span class="comment">// 保证相同的SQL语句从开始到结束永远只有一次，Node单线程执行所以无需担心状态同步问题。</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> results = {};</div><div class="line"><span class="keyword">var</span> done = unction(key, value) {</div><div class="line">  results[key] = value;</div><div class="line">  count++;</div><div class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) {</div><div class="line">    render(results);</div><div class="line">  }</div><div class="line">};</div><div class="line"></div><div class="line">fs.readFile(template_path, <span class="string">"utf8"</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, template)</span> </span>{</div><div class="line">  done(<span class="string">"template"</span>, template);</div><div class="line">});</div><div class="line">db.query(sql, <span class="function"><span class="keyword">function</span><span class="params">(err, data)</span> </span>{</div><div class="line">  done(<span class="string">"data"</span>, data);</div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">/* L10n.get</span></div><div class="line"> Synchronous method for retrieving localization strings from app's resources. This function should </div><div class="line"> be used only when direct manipulation on the strings is needed (etc. date/time formatting) and in </div><div class="line"> all other UI related cases should be replaced with DOM attributes setting or L10n.setAttributes().</div><div class="line"></div><div class="line">This method has also potential to generate race conditions so a developer has to make sure that any</div><div class="line"> code that uses this method is not fired before l10n resources are loaded using L10n.once() or L10n.</div><div class="line"> ready().*/</div><div class="line"></div><div class="line"></div><div class="line">l10.get(<span class="function"><span class="keyword">function</span><span class="params">(err, resources)</span> </span>{</div><div class="line">  done(<span class="string">"resources"</span>, resources);</div><div class="line">});</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 烧饼（哨兵）变量和偏函数结合</span></div><div class="line"><span class="keyword">var</span> after = <span class="function"><span class="keyword">function</span><span class="params">(times, callback)</span> </span>{</div><div class="line">  <span class="keyword">var</span> count = <span class="number">0</span>, resutls = {};</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(key, value)</span> </span>{</div><div class="line">    results[key] = value;</div><div class="line">    counts++;</div><div class="line">    <span class="keyword">if</span> (count === times) {</div><div class="line">      callback(results);</div><div class="line">    }</div><div class="line">  };</div><div class="line">};</div><div class="line"></div><div class="line"><span class="keyword">var</span> done = after(times, render);</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 多对一的收敛和事件订阅/发布</span></div><div class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.Emitter();</div><div class="line"><span class="keyword">var</span> done = after(times, render);</div><div class="line"></div><div class="line">emitter.on(<span class="string">"done"</span>, done);</div><div class="line">emitter.on(<span class="string">"done"</span>, other);</div><div class="line"></div><div class="line">fs.readFile(template_path, <span class="string">"utf8"</span>, <span class="function"><span class="keyword">function</span><span class="params">(err, template)</span> </span>{</div><div class="line">  emitter.emit(<span class="string">"done"</span>, <span class="string">"template"</span>, template);</div><div class="line">})</div></pre></td></tr></table></figure>
-
-<ul>
-<li>74 ~</li>
-</ul>
-<h2 id="构建Web应用">构建Web应用</h2>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2014/10/28/《九浅一深node-js》Book Note/" data-id="e1j1ge796daxhr6a" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2014/10/28/《九浅一深node-js》Book Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-Node-js开发指南-Learning-note" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -297,6 +165,70 @@
 
 
   
+    <article id="post-Learning-Notes-Angular" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/04/Learning-Notes-Angular/" class="article-date">
+  <time datetime="2014-10-04T15:52:37.000Z" itemprop="datePublished">Oct 4 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/04/Learning-Notes-Angular/">Learning Notes Angular</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">button</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-show</span>=<span class="value">"store.product.canPurchase"</span>&gt;</span>Add to Cart<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> app = angular.module(<span class="string">'gemStore'</span>, []);</div><div class="line"></div><div class="line">  app.controller(<span class="string">'StoreController'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    <span class="keyword">this</span>.product = gem;</div><div class="line">  });</div><div class="line"></div><div class="line">  <span class="keyword">var</span> gem = {</div><div class="line">    name: <span class="string">'Azurite'</span>,</div><div class="line">    price: <span class="number">110.50</span>,</div><div class="line">    canPurchase: <span class="literal">false</span>,</div><div class="line">    soldOut: <span class="literal">true</span></div><div class="line">  };</div><div class="line">})();</div></pre></td></tr></table></figure>
+
+<ul>
+<li>ng-hide</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">class</span>=<span class="value">"container"</span> <span class="attribute">ng-controller</span>=<span class="value">"StoreController as store"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"product row"</span> <span class="attribute">ng-repeat</span>=<span class="value">"product in store.products"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h3</span>&gt;</span></div><div class="line">      </div><div class="line">      <span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span>$<span class="tag">&lt;/<span class="title">em</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">h3</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="title">em</span> <span class="attribute">class</span>=<span class="value">"pull-right"</span>&gt;</span></span><span class="expression">{{<span class="variable">product.price</span> | <span class="variable">currency</span> &lt;<span class="end-block">/em</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>Pipe - “send the output into”</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2014/10/04/Learning-Notes-Angular/" data-id="pkj9fsdsa69nsxw4" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2014/10/04/Learning-Notes-Angular/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
 </section>
         
