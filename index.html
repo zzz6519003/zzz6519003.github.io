@@ -69,6 +69,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-iOS-Design-Defection" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/25/iOS-Design-Defection/" class="article-date">
+  <time datetime="2015-04-25T00:15:58.000Z" itemprop="datePublished">Apr 25 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/25/iOS-Design-Defection/">iOS Design Defection</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="App_name">App name</h3>
+<p>For example, the Chinese app sometimes always don’t have an english name, so in the case of the user prefer English language, he can’t use siri to open the app.<br>The principle is: When you are in other language mode, play like a native.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/04/25/iOS-Design-Defection/" data-id="w4lfcgnwa0xb2ppj" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/04/25/iOS-Design-Defection/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Zoft-Rules" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/01/Zoft-Rules/" class="article-date">
@@ -146,13 +186,6 @@
         <p>Find the mistake</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></div><div class="line">  <span class="function"><span class="keyword">def</span> </span>users_comments</div><div class="line">    posts = <span class="constant">Post</span>.all</div><div class="line">    comments = posts.map(&<span class="symbol">:comments</span>).flatten</div><div class="line">    <span class="variable">@user_comments</span> = comments.select <span class="keyword">do</span> |comment|</div><div class="line">      comment.author.username == params[<span class="symbol">:username</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
-<p>Flatten:</p>
-<p>Hash</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="literal">a</span> =  {<span class="number">1</span>=&gt; <span class="string">"one"</span>, <span class="number">2</span> =&gt; [<span class="number">2</span>,<span class="string">"two"</span>], <span class="number">3</span> =&gt; <span class="string">"three"</span>}</div><div class="line"><span class="literal">a</span>.flatten    # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, [<span class="number">2</span>, <span class="string">"two"</span>], <span class="number">3</span>, <span class="string">"three"</span>]</div><div class="line"><span class="literal">a</span>.flatten(<span class="number">2</span>) # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="string">"two"</span>, <span class="number">3</span>, <span class="string">"three"</span>]</div></pre></td></tr></table></figure>
-
-<p>Array</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">s =</span> [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ]           <span class="comment">#=&gt; [1, 2, 3]</span></div><div class="line"><span class="variable">t =</span> [ <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>] ]   <span class="comment">#=&gt; [4, 5, 6, [7, 8]]</span></div><div class="line"><span class="variable">a =</span> [ s, t, <span class="number">9</span>, <span class="number">10</span> ]       <span class="comment">#=&gt; [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10]</span></div><div class="line">a.flatten                 <span class="comment">#=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div><div class="line"><span class="variable">a =</span> [ <span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>] ] ]</div><div class="line">a.flatten(<span class="number">1</span>)              <span class="comment">#=&gt; [1, 2, 3, [4, 5]]</span></div></pre></td></tr></table></figure>
-
 <p>This is a classic example of the notorious “n+1” bug. The first line will retrieve all of the Post objects from the database, but then the very next line will make an additional request for each Post to retrieve the corresponding Comment objects. To make matters worse, this code is then making even more database requests in order to retrieve the Author of each Comment.</p>
 <p>This can all be avoided by changing the first line in the method to:</p>
 <p>posts = Post.includes(comments: [:author]).all<br>This tells ActiveRecord to retrieve the corresponding Comment and Author records from the database immediately after the initial request for all Posts, thereby reducing the number of database requests to just three.</p>
@@ -170,6 +203,13 @@
 <p>In order to protect against CSRF attacks, you can add protect_from_forgery to your ApplicationController. This will then cause Rails to require a CSRF token to be present before accepting any POST, PUT, or DELETE requests. The CSRF token is included as a hidden field in every form created using Rails’ form builders. It is also included as a header in GET requests so that other, non-form-based mechanisms for sending a POST can use it as well. Attackers are prevented from stealing the CSRF token by browsers’ “same origin” policy.</p>
 <hr>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h = HashWithIndifferentAccess.<span class="keyword">new</span></div><div class="line">h[:my_value] = <span class="string">'foo'</span></div><div class="line">h[<span class="string">'my_value'</span>] #=&gt; will <span class="keyword">return</span> <span class="string">"foo"</span></div></pre></td></tr></table></figure>
+
+<p>Flatten:</p>
+<p>Hash</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="literal">a</span> =  {<span class="number">1</span>=&gt; <span class="string">"one"</span>, <span class="number">2</span> =&gt; [<span class="number">2</span>,<span class="string">"two"</span>], <span class="number">3</span> =&gt; <span class="string">"three"</span>}</div><div class="line"><span class="literal">a</span>.flatten    # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, [<span class="number">2</span>, <span class="string">"two"</span>], <span class="number">3</span>, <span class="string">"three"</span>]</div><div class="line"><span class="literal">a</span>.flatten(<span class="number">2</span>) # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="string">"two"</span>, <span class="number">3</span>, <span class="string">"three"</span>]</div></pre></td></tr></table></figure>
+
+<p>Array</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">s =</span> [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ]           <span class="comment">#=&gt; [1, 2, 3]</span></div><div class="line"><span class="variable">t =</span> [ <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>] ]   <span class="comment">#=&gt; [4, 5, 6, [7, 8]]</span></div><div class="line"><span class="variable">a =</span> [ s, t, <span class="number">9</span>, <span class="number">10</span> ]       <span class="comment">#=&gt; [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10]</span></div><div class="line">a.flatten                 <span class="comment">#=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div><div class="line"><span class="variable">a =</span> [ <span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>] ] ]</div><div class="line">a.flatten(<span class="number">1</span>)              <span class="comment">#=&gt; [1, 2, 3, [4, 5]]</span></div></pre></td></tr></table></figure>
 
 <h3 id="Link:">Link:</h3>
 <p><a href="http://www.toptal.com/ruby-on-rails/interview-questions" target="_blank" rel="external">http://www.toptal.com/ruby-on-rails/interview-questions</a></p>
@@ -327,6 +367,8 @@
 </li>
 </ol>
 <p>Deep copies duplicate everything. A deep copy of a collection is two collections with all of the elements in the original collection duplicated.</p>
+<p>以上为一次阿里小记</p>
+<p>Mongodb本质存储的是什么</p>
 <h3 id="Links">Links</h3>
 <p><a href="http://stackoverflow.com/questions/337878/var-self-this" target="_blank" rel="external">http://stackoverflow.com/questions/337878/var-self-this</a></p>
 
@@ -529,53 +571,6 @@
 
 
   
-    <article id="post-Meteor™-Learning-Note" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/30/Meteor™-Learning-Note/" class="article-date">
-  <time datetime="2015-01-29T17:00:21.000Z" itemprop="datePublished">Jan 30 2015</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/30/Meteor™-Learning-Note/">Meteor™ Learning Note</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Dependency Tracking in Meteor: Computations<br>￼While Meteor is a real-time, reactive framework, not all of the code inside a Meteor app is reactive. If this were the case, your whole app would re-run every time anything changed. Instead, reactivity is limited to specific areas of your code, and we call these areas computations.<br>/client<br>Any files here are only served to the client. This is a good place to keep your HTML, CSS, and UI-related JavaScript code.</p>
-<p>When Should We Use observe()?<br>Using the above pattern is sometimes necessary, especially when dealing with third-party widgets. For example, let’s imagine we want to add or remove pins on a map in real time based on Collection data (say, to show the locations of currently logged in users).<br>In such cases, you’ll need to use observe() callbacks in order to get the map to “talk” with the Meteor collection and know how to react to data changes. For example, you would rely on the added and removed callbacks to call the map API’s own dropPin() or removePin() methods.</p>
-<p>/server<br>Any files in this directory are only used on the server, and are never sent to the client. Use /server to store source files with sensitive logic or data that should not be visible to the client.</p>
-<p>/public<br>Files in /public are served to the client as-is. Use this to store assets such as images. For example, if you have an image located at /public/background.png, you can include it in your HTML with <img src="/background.png"> or in your CSS with background-image:<br>url(/background.png). Note that /public is not part of the image URL.</p>
-<p>/private<br>These files can only be accessed by server code through Assets API and are not accessible to the client.</p>
-<h3 id="Link">Link</h3>
-<p><a href="http://docs.meteor.com/" target="_blank" rel="external">http://docs.meteor.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/" data-id="vdyat1ur1t56eaaa" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2015/01/30/Meteor™-Learning-Note/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -609,7 +604,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -619,6 +614,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/25/iOS-Design-Defection/">iOS Design Defection</a>
+          </li>
         
           <li>
             <a href="/2015/04/01/Zoft-Rules/">Zoft-Rules</a>
@@ -634,10 +633,6 @@
         
           <li>
             <a href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP, Book Note</a>
-          </li>
-        
-          <li>
-            <a href="/2015/02/27/面试小记/">面试小记</a>
           </li>
         
       </ul>

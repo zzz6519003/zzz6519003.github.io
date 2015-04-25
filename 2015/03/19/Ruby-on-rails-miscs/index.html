@@ -95,13 +95,6 @@
         <p>Find the mistake</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CommentsController</span> <span class="inheritance">&lt; <span class="parent">ApplicationController</span></span></span></div><div class="line">  <span class="function"><span class="keyword">def</span> </span>users_comments</div><div class="line">    posts = <span class="constant">Post</span>.all</div><div class="line">    comments = posts.map(&<span class="symbol">:comments</span>).flatten</div><div class="line">    <span class="variable">@user_comments</span> = comments.select <span class="keyword">do</span> |comment|</div><div class="line">      comment.author.username == params[<span class="symbol">:username</span>]</div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
-<p>Flatten:</p>
-<p>Hash</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="literal">a</span> =  {<span class="number">1</span>=&gt; <span class="string">"one"</span>, <span class="number">2</span> =&gt; [<span class="number">2</span>,<span class="string">"two"</span>], <span class="number">3</span> =&gt; <span class="string">"three"</span>}</div><div class="line"><span class="literal">a</span>.flatten    # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, [<span class="number">2</span>, <span class="string">"two"</span>], <span class="number">3</span>, <span class="string">"three"</span>]</div><div class="line"><span class="literal">a</span>.flatten(<span class="number">2</span>) # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="string">"two"</span>, <span class="number">3</span>, <span class="string">"three"</span>]</div></pre></td></tr></table></figure>
-
-<p>Array</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">s =</span> [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ]           <span class="comment">#=&gt; [1, 2, 3]</span></div><div class="line"><span class="variable">t =</span> [ <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>] ]   <span class="comment">#=&gt; [4, 5, 6, [7, 8]]</span></div><div class="line"><span class="variable">a =</span> [ s, t, <span class="number">9</span>, <span class="number">10</span> ]       <span class="comment">#=&gt; [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10]</span></div><div class="line">a.flatten                 <span class="comment">#=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div><div class="line"><span class="variable">a =</span> [ <span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>] ] ]</div><div class="line">a.flatten(<span class="number">1</span>)              <span class="comment">#=&gt; [1, 2, 3, [4, 5]]</span></div></pre></td></tr></table></figure>
-
 <p>This is a classic example of the notorious “n+1” bug. The first line will retrieve all of the Post objects from the database, but then the very next line will make an additional request for each Post to retrieve the corresponding Comment objects. To make matters worse, this code is then making even more database requests in order to retrieve the Author of each Comment.</p>
 <p>This can all be avoided by changing the first line in the method to:</p>
 <p>posts = Post.includes(comments: [:author]).all<br>This tells ActiveRecord to retrieve the corresponding Comment and Author records from the database immediately after the initial request for all Posts, thereby reducing the number of database requests to just three.</p>
@@ -119,6 +112,13 @@
 <p>In order to protect against CSRF attacks, you can add protect_from_forgery to your ApplicationController. This will then cause Rails to require a CSRF token to be present before accepting any POST, PUT, or DELETE requests. The CSRF token is included as a hidden field in every form created using Rails’ form builders. It is also included as a header in GET requests so that other, non-form-based mechanisms for sending a POST can use it as well. Attackers are prevented from stealing the CSRF token by browsers’ “same origin” policy.</p>
 <hr>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h = HashWithIndifferentAccess.<span class="keyword">new</span></div><div class="line">h[:my_value] = <span class="string">'foo'</span></div><div class="line">h[<span class="string">'my_value'</span>] #=&gt; will <span class="keyword">return</span> <span class="string">"foo"</span></div></pre></td></tr></table></figure>
+
+<p>Flatten:</p>
+<p>Hash</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="literal">a</span> =  {<span class="number">1</span>=&gt; <span class="string">"one"</span>, <span class="number">2</span> =&gt; [<span class="number">2</span>,<span class="string">"two"</span>], <span class="number">3</span> =&gt; <span class="string">"three"</span>}</div><div class="line"><span class="literal">a</span>.flatten    # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, [<span class="number">2</span>, <span class="string">"two"</span>], <span class="number">3</span>, <span class="string">"three"</span>]</div><div class="line"><span class="literal">a</span>.flatten(<span class="number">2</span>) # =&gt; [<span class="number">1</span>, <span class="string">"one"</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="string">"two"</span>, <span class="number">3</span>, <span class="string">"three"</span>]</div></pre></td></tr></table></figure>
+
+<p>Array</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">s =</span> [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ]           <span class="comment">#=&gt; [1, 2, 3]</span></div><div class="line"><span class="variable">t =</span> [ <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, [<span class="number">7</span>, <span class="number">8</span>] ]   <span class="comment">#=&gt; [4, 5, 6, [7, 8]]</span></div><div class="line"><span class="variable">a =</span> [ s, t, <span class="number">9</span>, <span class="number">10</span> ]       <span class="comment">#=&gt; [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10]</span></div><div class="line">a.flatten                 <span class="comment">#=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div><div class="line"><span class="variable">a =</span> [ <span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>] ] ]</div><div class="line">a.flatten(<span class="number">1</span>)              <span class="comment">#=&gt; [1, 2, 3, [4, 5]]</span></div></pre></td></tr></table></figure>
 
 <h3 id="Link:">Link:</h3>
 <p><a href="http://www.toptal.com/ruby-on-rails/interview-questions" target="_blank" rel="external">http://www.toptal.com/ruby-on-rails/interview-questions</a></p>
@@ -193,7 +193,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -203,6 +203,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/25/iOS-Design-Defection/">iOS Design Defection</a>
+          </li>
         
           <li>
             <a href="/2015/04/01/Zoft-Rules/">Zoft-Rules</a>
@@ -218,10 +222,6 @@
         
           <li>
             <a href="/2015/03/09/Let-s-talk-about-PHP/">Let&#39;s talk about PHP, Book Note</a>
-          </li>
-        
-          <li>
-            <a href="/2015/02/27/面试小记/">面试小记</a>
           </li>
         
       </ul>
