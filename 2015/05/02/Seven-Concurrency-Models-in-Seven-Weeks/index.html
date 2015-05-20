@@ -5,15 +5,21 @@
   
   <title>Seven Concurrency Models in Seven Weeks | 男哥https://github.com/zzz6519003</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Computer graphics is all about manipulating data—huge amounts of data. And doing it quickly.">
+  <meta name="description" content="Actors
+More Object-Oriented than Objects
+Functional programming avoids the problems associated with shared mutable state by avoiding mutable state. Actor programming, by contrast, retains mutable stat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Seven Concurrency Models in Seven Weeks">
 <meta property="og:url" content="http://zzz6519003.github.io/2015/05/02/Seven-Concurrency-Models-in-Seven-Weeks/">
 <meta property="og:site_name" content="男哥https://github.com/zzz6519003">
-<meta property="og:description" content="Computer graphics is all about manipulating data—huge amounts of data. And doing it quickly.">
+<meta property="og:description" content="Actors
+More Object-Oriented than Objects
+Functional programming avoids the problems associated with shared mutable state by avoiding mutable state. Actor programming, by contrast, retains mutable stat">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Seven Concurrency Models in Seven Weeks">
-<meta name="twitter:description" content="Computer graphics is all about manipulating data—huge amounts of data. And doing it quickly.">
+<meta name="twitter:description" content="Actors
+More Object-Oriented than Objects
+Functional programming avoids the problems associated with shared mutable state by avoiding mutable state. Actor programming, by contrast, retains mutable stat">
 
   
     <link rel="alternative" href="/atom.xml" title="男哥https://github.com/zzz6519003" type="application/atom+xml">
@@ -89,7 +95,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Computer graphics is all about manipulating data—huge amounts of data. And doing it quickly. </p>
+        <h1 id="Actors">Actors</h1>
+<h2 id="More_Object-Oriented_than_Objects">More Object-Oriented than Objects</h2>
+<p>Functional programming avoids the problems associated with shared mutable state by avoiding mutable state. Actor programming, by contrast, retains mutable state but avoids sharing it.<br>Computer graphics is all about manipulating data—huge amounts of data. And doing it quickly. </p>
+<h3 id="GPGPU_Programming">GPGPU Programming</h3>
+<p>To create a complete program, we need to embed our kernel in a host program that performs the following steps:</p>
+<ol>
+<li>Create a context within which the kernel will run together with a command queue.</li>
+<li>Compile the kernel.</li>
+<li>Create buffers for input and output data.</li>
+<li>Enqueue a command that executes the kernel once for each work-item.</li>
+<li>Retrieve the results.</li>
+</ol>
 
       
     </div>
@@ -104,6 +121,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/05/20/ECMAScript-2015-Language-Specification-Note/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ECMAScript 2015 Language Specification Note
+        
+      </div>
+    </a>
   
   
     <a href="/2015/04/27/JavaScript-Allonge/" id="article-nav-older" class="article-nav-link-wrap">
@@ -150,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -160,6 +186,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/05/20/ECMAScript-2015-Language-Specification-Note/">ECMAScript 2015 Language Specification Note</a>
+          </li>
         
           <li>
             <a href="/2015/05/02/Seven-Concurrency-Models-in-Seven-Weeks/">Seven Concurrency Models in Seven Weeks</a>
@@ -175,10 +205,6 @@
         
           <li>
             <a href="/2015/04/01/Zoft-Rules/">Zoft-Rules</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/19/Ruby-on-rails-miscs/">Ruby on rails miscs-Notes</a>
           </li>
         
       </ul>
