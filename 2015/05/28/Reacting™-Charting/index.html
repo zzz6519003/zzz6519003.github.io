@@ -11,6 +11,7 @@
 <meta property="og:url" content="http://zzz6519003.github.io/2015/05/28/Reacting™-Charting/">
 <meta property="og:site_name" content="男哥https://github.com/zzz6519003">
 <meta property="og:description" content="First of all, please let me say this, React is designed for us native developer!There’s a confusing idiom “scale”.http://stackoverflow.com/questions/17562119/how-to-interpret-the-d3-statement-var-r-d3">
+<meta property="og:image" content="https://cask.scotch.io/2014/10/V70cSEC.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reacting™ & Charting">
 <meta name="twitter:description" content="First of all, please let me say this, React is designed for us native developer!There’s a confusing idiom “scale”.http://stackoverflow.com/questions/17562119/how-to-interpret-the-d3-statement-var-r-d3">
@@ -90,14 +91,186 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>First of all, please let me say this, React is designed for us native developer!<br>There’s a confusing idiom “scale”.<br><a href="http://stackoverflow.com/questions/17562119/how-to-interpret-the-d3-statement-var-r-d3-scale-linear-domain0-1-range" target="_blank" rel="external">http://stackoverflow.com/questions/17562119/how-to-interpret-the-d3-statement-var-r-d3-scale-linear-domain0-1-range</a></p>
+<h3 id="A_bit_about_flux">A bit about flux</h3>
+<p><img src="https://cask.scotch.io/2014/10/V70cSEC.png" alt="" title="Logo Title Text 1"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">some fancy usage <span class="keyword">in</span> dispatcher, <span class="keyword">this</span> looks awesome...</div><div class="line"><span class="keyword">case</span> <span class="string">'BUY_SHOES'</span>:</div><div class="line">  AppDispatcher.waitFor([</div><div class="line">    ShoeStore.dispatcherIndex</div><div class="line">  ], <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    CheckoutStore.purchaseShoes(ShoeStore.getSelectedShoes());</div><div class="line">  });</div><div class="line">  <span class="keyword">break</span>;</div></pre></td></tr></table></figure>
+
+<h3 id="d3_overview">d3 overview</h3>
+<p>Behaviors - reusable interaction behaviors</p>
+<p>Core - selections, transitions, data, localization, colors, etc.</p>
+<p>Geography - project spherical coordinates, latitude &amp; longitude math</p>
+<p>Geometry - utilities for 2D geometry, such as Voronoi diagrams and quadtrees</p>
+<p>Layouts - derive secondary data for positioning elements</p>
+<p>Scales - convert between data and visual encodings</p>
+<p>SVG - utilities for creating Scalable Vector Graphics</p>
+<p>Time - parse or format times, compute calendar intervals, etc.</p>
+<h3 id="d3_example">d3 example</h3>
+<p><a href="http://bl.ocks.org/mbostock/c501f6cae402ab5e90c9" target="_blank" rel="external">http://bl.ocks.org/mbostock/c501f6cae402ab5e90c9</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">21</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> width = <span class="number">960</span>,</div><div class="line">    height = <span class="number">500</span>,</div><div class="line">    radius = height / <span class="number">2</span> - <span class="number">10</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arc = d3.svg.arc()</div><div class="line">    .innerRadius(radius - <span class="number">40</span>)</div><div class="line">    .outerRadius(radius)</div><div class="line">    .cornerRadius(<span class="number">20</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> pie = d3.layout.pie()</div><div class="line">    .padAngle(<span class="number">.02</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> color = d3.scale.category10();</div><div class="line"></div><div class="line"><span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)</div><div class="line">    .attr(<span class="string">"width"</span>, width)</div><div class="line">    .attr(<span class="string">"height"</span>, height)</div><div class="line">  .append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + width / <span class="number">2</span> + <span class="string">","</span> + height / <span class="number">2</span> + <span class="string">")"</span>);</div><div class="line"></div><div class="line">svg.selectAll(<span class="string">"path"</span>)</div><div class="line">    .data(pie(data))</div><div class="line">  .enter().append(<span class="string">"path"</span>)</div><div class="line">    .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d, i)</span> </span>{ <span class="keyword">return</span> color(i); })</div><div class="line">    .attr(<span class="string">"d"</span>, arc);</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p><meta charset="utf-8"></p>
+<p><body></body></p>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var data = [1, 1, 2, 3, 5, 8, 13, 21];
+
+var width = 960,
+    height = 500,
+    radius = height / 2 - 10;
+
+var arc = d3.svg.arc()
+    .innerRadius(radius - 40)
+    .outerRadius(radius)
+    .cornerRadius(20);
+
+var pie = d3.layout.pie()
+    .padAngle(.02);
+
+var color = d3.scale.category10();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+svg.selectAll("path")
+    .data(pie(data))
+  .enter().append("path")
+    .style("fill", function(d, i) { return color(i); })
+    .attr("d", arc);
+
+</script>
+
+
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><meta charset="utf-8"></p>
+<style>
+
+<p>body {<br>  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;<br>  width: 960px;<br>  height: 500px;<br>  position: relative;<br>}</p>
+<p>form {<br>  position: absolute;<br>  top: 1em;<br>  left: 1em;<br>}</p>
+<p>path {<br>  fill-rule: evenodd;<br>  stroke: #333;<br>  stroke-width: 2px;<br>}</p>
+<p>.sun path {<br>  fill: #6baed6;<br>}</p>
+<p>.planet path {<br>  fill: #9ecae1;<br>}</p>
+<p>.annulus path {<br>  fill: #c6dbef;<br>}</p>
+<p></style><p></p>
+<p><form><br>  <input type="radio" name="reference" id="ref-annulus"><br>  <label for="ref-annulus">Annulus</label><br><br>  <input type="radio" name="reference" id="ref-planet" checked><br>  <label for="ref-planet">Planets</label><br><br>  <input type="radio" name="reference" id="ref-sun"><br>  <label for="ref-sun">Sun</label><br></form></p>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500,
+    radius = 80,
+    x = Math.sin(2 * Math.PI / 3),
+    y = Math.cos(2 * Math.PI / 3);
+
+var offset = 0,
+    speed = 4,
+    start = Date.now();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
+  .append("g");
+
+var frame = svg.append("g")
+    .datum({radius: Infinity});
+
+frame.append("g")
+    .attr("class", "annulus")
+    .datum({teeth: 80, radius: -radius * 5, annulus: true})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "sun")
+    .datum({teeth: 16, radius: radius})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(0,-" + radius * 3 + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(" + -radius * 3 * x + "," + -radius * 3 * y + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(" + radius * 3 * x + "," + -radius * 3 * y + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+d3.selectAll("input[name=reference]")
+    .data([radius * 5, Infinity, -radius])
+    .on("change", function(radius1) {
+      var radius0 = frame.datum().radius, angle = (Date.now() - start) * speed;
+      frame.datum({radius: radius1});
+      svg.attr("transform", "rotate(" + (offset += angle / radius0 - angle / radius1) + ")");
+    });
+
+d3.selectAll("input[name=speed]")
+    .on("change", function() { speed = +this.value; });
+
+function gear(d) {
+  var n = d.teeth,
+      r2 = Math.abs(d.radius),
+      r0 = r2 - 8,
+      r1 = r2 + 8,
+      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,
+      da = Math.PI / n,
+      a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),
+      i = -1,
+      path = ["M", r0 * Math.cos(a0), ",", r0 * Math.sin(a0)];
+  while (++i < n) path.push(
+      "A", r0, ",", r0, " 0 0,1 ", r0 * Math.cos(a0 += da), ",", r0 * Math.sin(a0),
+      "L", r2 * Math.cos(a0), ",", r2 * Math.sin(a0),
+      "L", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "A", r1, ",", r1, " 0 0,1 ", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "L", r2 * Math.cos(a0 += da / 3), ",", r2 * Math.sin(a0),
+      "L", r0 * Math.cos(a0), ",", r0 * Math.sin(a0));
+  path.push("M0,", -r3, "A", r3, ",", r3, " 0 0,0 0,", r3, "A", r3, ",", r3, " 0 0,0 0,", -r3, "Z");
+  return path.join("");
+}
+
+d3.timer(function() {
+  var angle = (Date.now() - start) * speed,
+      transform = function(d) { return "rotate(" + angle / d.radius + ")"; };
+  frame.selectAll("path").attr("transform", transform);
+  frame.attr("transform", transform); // frame of reference
+});
+
+</script>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></div><div class="line"></div><div class="line"><span class="tag">body</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> <span class="string">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif</span></span>;</div><div class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">960px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">500px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="tag">form</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</div><div class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">1em</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">1em</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="tag">path</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">fill-rule</span>:<span class="value"> evenodd</span></span>;</div><div class="line">  <span class="rule"><span class="attribute">stroke</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">stroke-width</span>:<span class="value"> <span class="number">2px</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.sun</span> <span class="tag">path</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">fill</span>:<span class="value"> <span class="hexcolor">#6baed6</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.planet</span> <span class="tag">path</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">fill</span>:<span class="value"> <span class="hexcolor">#9ecae1</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.annulus</span> <span class="tag">path</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">fill</span>:<span class="value"> <span class="hexcolor">#c6dbef</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="title">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"reference"</span> <span class="attribute">id</span>=<span class="value">"ref-annulus"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"ref-annulus"</span>&gt;</span>Annulus<span class="tag">&lt;/<span class="title">label</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"reference"</span> <span class="attribute">id</span>=<span class="value">"ref-planet"</span> <span class="attribute">checked</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"ref-planet"</span>&gt;</span>Planets<span class="tag">&lt;/<span class="title">label</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">"reference"</span> <span class="attribute">id</span>=<span class="value">"ref-sun"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"ref-sun"</span>&gt;</span>Sun<span class="tag">&lt;/<span class="title">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line"></div><div class="line"><span class="keyword">var</span> width = <span class="number">960</span>,</div><div class="line">    height = <span class="number">500</span>,</div><div class="line">    radius = <span class="number">80</span>,</div><div class="line">    x = <span class="built_in">Math</span>.sin(<span class="number">2</span> * <span class="built_in">Math</span>.PI / <span class="number">3</span>),</div><div class="line">    y = <span class="built_in">Math</span>.cos(<span class="number">2</span> * <span class="built_in">Math</span>.PI / <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> offset = <span class="number">0</span>,</div><div class="line">    speed = <span class="number">4</span>,</div><div class="line">    start = <span class="built_in">Date</span>.now();</div><div class="line"></div><div class="line"><span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)</div><div class="line">    .attr(<span class="string">"width"</span>, width)</div><div class="line">    .attr(<span class="string">"height"</span>, height)</div><div class="line">  .append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + width / <span class="number">2</span> + <span class="string">","</span> + height / <span class="number">2</span> + <span class="string">")scale(.55)"</span>)</div><div class="line">  .append(<span class="string">"g"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> frame = svg.append(<span class="string">"g"</span>)</div><div class="line">    .datum({radius: <span class="literal">Infinity</span>});</div><div class="line"></div><div class="line">frame.append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"class"</span>, <span class="string">"annulus"</span>)</div><div class="line">    .datum({teeth: <span class="number">80</span>, radius: -radius * <span class="number">5</span>, annulus: <span class="literal">true</span>})</div><div class="line">  .append(<span class="string">"path"</span>)</div><div class="line">    .attr(<span class="string">"d"</span>, gear);</div><div class="line"></div><div class="line">frame.append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"class"</span>, <span class="string">"sun"</span>)</div><div class="line">    .datum({teeth: <span class="number">16</span>, radius: radius})</div><div class="line">  .append(<span class="string">"path"</span>)</div><div class="line">    .attr(<span class="string">"d"</span>, gear);</div><div class="line"></div><div class="line">frame.append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"class"</span>, <span class="string">"planet"</span>)</div><div class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate(0,-"</span> + radius * <span class="number">3</span> + <span class="string">")"</span>)</div><div class="line">    .datum({teeth: <span class="number">32</span>, radius: -radius * <span class="number">2</span>})</div><div class="line">  .append(<span class="string">"path"</span>)</div><div class="line">    .attr(<span class="string">"d"</span>, gear);</div><div class="line"></div><div class="line">frame.append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"class"</span>, <span class="string">"planet"</span>)</div><div class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + -radius * <span class="number">3</span> * x + <span class="string">","</span> + -radius * <span class="number">3</span> * y + <span class="string">")"</span>)</div><div class="line">    .datum({teeth: <span class="number">32</span>, radius: -radius * <span class="number">2</span>})</div><div class="line">  .append(<span class="string">"path"</span>)</div><div class="line">    .attr(<span class="string">"d"</span>, gear);</div><div class="line"></div><div class="line">frame.append(<span class="string">"g"</span>)</div><div class="line">    .attr(<span class="string">"class"</span>, <span class="string">"planet"</span>)</div><div class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + radius * <span class="number">3</span> * x + <span class="string">","</span> + -radius * <span class="number">3</span> * y + <span class="string">")"</span>)</div><div class="line">    .datum({teeth: <span class="number">32</span>, radius: -radius * <span class="number">2</span>})</div><div class="line">  .append(<span class="string">"path"</span>)</div><div class="line">    .attr(<span class="string">"d"</span>, gear);</div><div class="line"></div><div class="line">d3.selectAll(<span class="string">"input[name=reference]"</span>)</div><div class="line">    .data([radius * <span class="number">5</span>, <span class="literal">Infinity</span>, -radius])</div><div class="line">    .on(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span><span class="params">(radius1)</span> </span>{</div><div class="line">      <span class="keyword">var</span> radius0 = frame.datum().radius, angle = (<span class="built_in">Date</span>.now() - start) * speed;</div><div class="line">      frame.datum({radius: radius1});</div><div class="line">      svg.attr(<span class="string">"transform"</span>, <span class="string">"rotate("</span> + (offset += angle / radius0 - angle / radius1) + <span class="string">")"</span>);</div><div class="line">    });</div><div class="line"></div><div class="line">d3.selectAll(<span class="string">"input[name=speed]"</span>)</div><div class="line">    .on(<span class="string">"change"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{ speed = +<span class="keyword">this</span>.value; });</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">gear</span><span class="params">(d)</span> </span>{</div><div class="line">  <span class="keyword">var</span> n = d.teeth,</div><div class="line">      r2 = <span class="built_in">Math</span>.abs(d.radius),</div><div class="line">      r0 = r2 - <span class="number">8</span>,</div><div class="line">      r1 = r2 + <span class="number">8</span>,</div><div class="line">      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + <span class="number">20</span>) : <span class="number">20</span>,</div><div class="line">      da = <span class="built_in">Math</span>.PI / n,</div><div class="line">      a0 = -<span class="built_in">Math</span>.PI / <span class="number">2</span> + (d.annulus ? <span class="built_in">Math</span>.PI / n : <span class="number">0</span>),</div><div class="line">      i = -<span class="number">1</span>,</div><div class="line">      path = [<span class="string">"M"</span>, r0 * <span class="built_in">Math</span>.cos(a0), <span class="string">","</span>, r0 * <span class="built_in">Math</span>.sin(a0)];</div><div class="line">  <span class="keyword">while</span> (++i &lt; n) path.push(</div><div class="line">      <span class="string">"A"</span>, r0, <span class="string">","</span>, r0, <span class="string">" 0 0,1 "</span>, r0 * <span class="built_in">Math</span>.cos(a0 += da), <span class="string">","</span>, r0 * <span class="built_in">Math</span>.sin(a0),</div><div class="line">      <span class="string">"L"</span>, r2 * <span class="built_in">Math</span>.cos(a0), <span class="string">","</span>, r2 * <span class="built_in">Math</span>.sin(a0),</div><div class="line">      <span class="string">"L"</span>, r1 * <span class="built_in">Math</span>.cos(a0 += da / <span class="number">3</span>), <span class="string">","</span>, r1 * <span class="built_in">Math</span>.sin(a0),</div><div class="line">      <span class="string">"A"</span>, r1, <span class="string">","</span>, r1, <span class="string">" 0 0,1 "</span>, r1 * <span class="built_in">Math</span>.cos(a0 += da / <span class="number">3</span>), <span class="string">","</span>, r1 * <span class="built_in">Math</span>.sin(a0),</div><div class="line">      <span class="string">"L"</span>, r2 * <span class="built_in">Math</span>.cos(a0 += da / <span class="number">3</span>), <span class="string">","</span>, r2 * <span class="built_in">Math</span>.sin(a0),</div><div class="line">      <span class="string">"L"</span>, r0 * <span class="built_in">Math</span>.cos(a0), <span class="string">","</span>, r0 * <span class="built_in">Math</span>.sin(a0));</div><div class="line">  path.push(<span class="string">"M0,"</span>, -r3, <span class="string">"A"</span>, r3, <span class="string">","</span>, r3, <span class="string">" 0 0,0 0,"</span>, r3, <span class="string">"A"</span>, r3, <span class="string">","</span>, r3, <span class="string">" 0 0,0 0,"</span>, -r3, <span class="string">"Z"</span>);</div><div class="line">  <span class="keyword">return</span> path.join(<span class="string">""</span>);</div><div class="line">}</div><div class="line"></div><div class="line">d3.timer(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> angle = (<span class="built_in">Date</span>.now() - start) * speed,</div><div class="line">      transform = <span class="function"><span class="keyword">function</span><span class="params">(d)</span> </span>{ <span class="keyword">return</span> <span class="string">"rotate("</span> + angle / d.radius + <span class="string">")"</span>; };</div><div class="line">  frame.selectAll(<span class="string">"path"</span>).attr(<span class="string">"transform"</span>, transform);</div><div class="line">  frame.attr(<span class="string">"transform"</span>, transform); <span class="comment">// frame of reference</span></div><div class="line">});</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
 <h3 id="Tip">Tip</h3>
-<p>React file can actually be named like “*.react.js”. Then you can require it like this:</p>
+<ul>
+<li>React files can actually be named like “*.react.js”. Then you can require it like this:</li>
+</ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> FluxCartApp = <span class="built_in">require</span>(<span class="string">'./components/FluxCartApp.react'</span>);</div></pre></td></tr></table></figure>
 
-<p>Hmmm… definitely cooler.</p>
+<p>Hmmm… definitely cooler, not sure if it’s useful</p>
+<ul>
+<li>Paperclip™ is a great way for you to play around with d3, you just copy those html into the editor and see how things are going on. I don’t know how to explain it better, but you just fucking do it.</li>
+</ul>
 <h3 id="Links">Links</h3>
 <p>Play with D3:</p>
 <p><a href="http://jsfiddle.net/enigmarm/3HL4a/13/" target="_blank" rel="external">http://jsfiddle.net/enigmarm/3HL4a/13/</a></p>
+<p><a href="http://bl.ocks.org/mbostock" target="_blank" rel="external">http://bl.ocks.org/mbostock</a></p>
+<h3 id="Reference">Reference</h3>
+<p> <a href="https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select" target="_blank" rel="external">https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select</a><br> <a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture" target="_blank" rel="external">https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture</a></p>
 
       
     </div>
