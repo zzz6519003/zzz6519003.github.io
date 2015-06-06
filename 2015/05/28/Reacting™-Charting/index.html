@@ -5,25 +5,25 @@
   
   <title>Reacting™ &amp; D3® Charting | 男哥https://github.com/zzz6519003</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="First of all, please let me say this, React is designed for us native developer!
-A bit about flux
+  <meta name="description" content="First of all, please let me say this, React is designed for us native developer!(because of the lifecycle things…)
+flux
 
-12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES':  AppDispatcher.wait">
+12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reacting™ & D3® Charting">
 <meta property="og:url" content="http://zzz6519003.github.io/2015/05/28/Reacting™-Charting/">
 <meta property="og:site_name" content="男哥https://github.com/zzz6519003">
-<meta property="og:description" content="First of all, please let me say this, React is designed for us native developer!
-A bit about flux
+<meta property="og:description" content="First of all, please let me say this, React is designed for us native developer!(because of the lifecycle things…)
+flux
 
-12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES':  AppDispatcher.wait">
+12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES">
 <meta property="og:image" content="https://cask.scotch.io/2014/10/V70cSEC.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reacting™ & D3® Charting">
-<meta name="twitter:description" content="First of all, please let me say this, React is designed for us native developer!
-A bit about flux
+<meta name="twitter:description" content="First of all, please let me say this, React is designed for us native developer!(because of the lifecycle things…)
+flux
 
-12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES':  AppDispatcher.wait">
+12345678// some fancy usage in dispatcher, this looks awesome...case 'BUY_SHOES">
 
   
     <link rel="alternative" href="/atom.xml" title="男哥https://github.com/zzz6519003" type="application/atom+xml">
@@ -99,8 +99,8 @@ A bit about flux
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>First of all, please let me say this, React is designed for us native developer!</p>
-<h3 id="A_bit_about_flux">A bit about flux</h3>
+        <p>First of all, please let me say this, React is designed for us native developer!(because of the lifecycle things…)</p>
+<h3 id="flux">flux</h3>
 <p><img src="https://cask.scotch.io/2014/10/V70cSEC.png" alt="" title="Logo Title Text 1"></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// some fancy usage in dispatcher, this looks awesome...</span></div><div class="line"><span class="keyword">case</span> <span class="string">'BUY_SHOES'</span>:</div><div class="line">  AppDispatcher.waitFor([</div><div class="line">    ShoeStore.dispatcherIndex</div><div class="line">  ], <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    CheckoutStore.purchaseShoes(ShoeStore.getSelectedShoes());</div><div class="line">  });</div><div class="line">  <span class="keyword">break</span>;</div></pre></td></tr></table></figure>
 
@@ -129,7 +129,8 @@ A bit about flux
 <script>
 
 d3.select("input").transition()
-    .duration(7500)
+    .duration(750)
+    // hahah
     .tween("value", function() {
       var i = d3.interpolate(this.value, this.max);
       return function(t) { this.value = i(t); };
@@ -306,6 +307,7 @@ d3.timer(function() {
 <p>Play with D3:</p>
 <p><a href="http://jsfiddle.net/enigmarm/3HL4a/13/" target="_blank" rel="external">http://jsfiddle.net/enigmarm/3HL4a/13/</a></p>
 <p><a href="http://bl.ocks.org/mbostock" target="_blank" rel="external">http://bl.ocks.org/mbostock</a></p>
+<p>One repo to rule them all</p>
 <h3 id="Reference">Reference</h3>
 <p> <a href="https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select" target="_blank" rel="external">https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select</a><br> <a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture" target="_blank" rel="external">https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture</a></p>
 
