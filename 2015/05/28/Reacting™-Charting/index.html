@@ -96,13 +96,14 @@ Long long ago, when Facebook tries to use HTML5 technology to build the">
         <p>First of all, please let me say this, React is designed for us native developer!(because of the similar API, lifecycle things…).</p>
 <p>Long long ago, when Facebook tries to use HTML5 technology to build the mobile version of Facebook, it turns out to be a failure, at that time, there are not so many choices of front-end modularization framework to choose from.</p>
 <p>But no pains, no gains.</p>
-<p>I guess Facebook learns from it, and I guess they actually learn a lot from the process. Since then Facebook spend a lot of energy on iOS.</p>
+<p>I guess Facebook learns from it, and I guess they actually learn a lot from the process. Since then Facebook spend a lot of energy on iOS.(like building the very famous Paper™ APP)</p>
 <p>So my point is, if there’s gonna be one technology to rule the mobile &amp; web platform, that’s gonna be build by Facebook XD.</p>
-<h3 id="flux">flux</h3>
+<h3 id="Flux">Flux</h3>
 <p><img src="https://cask.scotch.io/2014/10/V70cSEC.png" alt="" title="Logo Title Text 1"></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// some fancy usage in dispatcher, this looks awesome...</span></div><div class="line"><span class="keyword">case</span> <span class="string">'BUY_SHOES'</span>:</div><div class="line">  AppDispatcher.waitFor([</div><div class="line">    ShoeStore.dispatcherIndex</div><div class="line">  ], <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    CheckoutStore.purchaseShoes(ShoeStore.getSelectedShoes());</div><div class="line">  });</div><div class="line">  <span class="keyword">break</span>;</div></pre></td></tr></table></figure>
 
-<h3 id="d3_overview">d3 overview</h3>
+<h3 id="D3_Overview_&amp;_concept">D3 Overview &amp; concept</h3>
+<p><em>lower lever API, but more control</em></p>
 <p>Behaviors - reusable interaction behaviors</p>
 <p>Core - selections, transitions, data, localization, colors, etc.</p>
 <p>Geography - project spherical coordinates, latitude &amp; longitude math</p>
@@ -111,6 +112,10 @@ Long long ago, when Facebook tries to use HTML5 technology to build the">
 <p>Scales - convert between data and visual encodings</p>
 <p>SVG - utilities for creating Scalable Vector Graphics</p>
 <p>Time - parse or format times, compute calendar intervals, etc.</p>
+<h4 id="g">g</h4>
+<p>The g element is a container used to group objects. Transformations applied to the g element are performed on all of its child elements. Attributes applied are inherited by child elements. In addition, it can be used to define complex objects that can later be referenced with the <use> element.</p>
+<h4 id="d3-select(selector)">d3.select(selector)</h4>
+<p>Selects the first element that matches the specified selector string, returning a single-element selection. If no elements in the current document match the specified selector, returns the empty selection. If multiple elements match the selector, only the first matching element (in document traversal order) will be selected.</p>
 <h3 id="D3_+_React">D3 + React</h3>
 <p><a href="https://github.com/codesuki/react-d3-components" target="_blank" rel="external">https://github.com/codesuki/react-d3-components</a></p>
 <p>Let React have complete control over the DOM even when using D3. This way we can benefit from Reacts Virtual DOM.</p>
@@ -304,15 +309,22 @@ d3.timer(function() {
 <li>Paperclip™ is a great way for you to play around with d3, you just copy those html into the editor and see how things are going on. I don’t know how to explain it better, but you just fucking do it.</li>
 </ul>
 <h3 id="Links">Links</h3>
+<p><a href="https://github.com/wbkd/awesome-d3" target="_blank" rel="external">https://github.com/wbkd/awesome-d3</a></p>
 <p>Let’s Make a Bar Chart <a href="http://bost.ocks.org/mike/bar/" target="_blank" rel="external">http://bost.ocks.org/mike/bar/</a></p>
-<p><a href="http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/" target="_blank" rel="external">http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/</a></p>
+<p>D3 and React - the future of charting components?<br><a href="http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/" target="_blank" rel="external">http://10consulting.com/2014/02/19/d3-plus-reactjs-for-charting/</a></p>
 <p>Play with D3:</p>
 <p><a href="http://jsfiddle.net/enigmarm/3HL4a/13/" target="_blank" rel="external">http://jsfiddle.net/enigmarm/3HL4a/13/</a></p>
 <p><a href="http://bl.ocks.org/mbostock" target="_blank" rel="external">http://bl.ocks.org/mbostock</a></p>
 <p>One repo to rule them all</p>
 <p>Awesome-react</p>
+<h3 id="Book">Book</h3>
+<p><a href="https://leanpub.com/D3-Tips-and-Tricks" target="_blank" rel="external">https://leanpub.com/D3-Tips-and-Tricks</a></p>
+<p><a href="https://leanpub.com/reactd3js" target="_blank" rel="external">https://leanpub.com/reactd3js</a></p>
+<p>Get them for free… Holy High(好厉害).</p>
+<h3 id="Course">Course</h3>
+<p>This one’s not for free… so if there are team coverage?XD<br><a href="https://www.udemy.com/mastering-d3-js/" target="_blank" rel="external">https://www.udemy.com/mastering-d3-js/</a></p>
 <h3 id="Reference">Reference</h3>
-<p> <a href="https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select" target="_blank" rel="external">https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select</a><br> <a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture" target="_blank" rel="external">https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture</a></p>
+<p> <a href="https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select" target="_blank" rel="external">https://github.com/mbostock/d3/wiki/%E9%80%89%E6%8B%A9%E9%9B%86#d3_select</a><br> <a href="https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture" target="_blank" rel="external">https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture</a><br> <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g</a></p>
 
       
     </div>
