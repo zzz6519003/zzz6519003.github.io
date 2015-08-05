@@ -69,6 +69,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-面试小记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/27/面试小记/" class="article-date">
+  <time datetime="2015-02-27T15:47:39.000Z" itemprop="datePublished">Feb 27 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/27/面试小记/">面试小记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>js this的作用域<br>A function’s this keyword behaves a little differently in JavaScript compared to other languages. It also has some differences between strict mode and non-strict mode.<br><code>
+</code></p>
+</li>
+<li><p>内连接&amp;左连接的区别<br>例子：   </p>
+</li>
+</ol>
+<hr>
+<p>  a表     id   name     b表     id   job   parent_id<br>              1   张3                   1     23     1<br>              2   李四                 2     34     2<br>              3   王武                 3     34     4<br>  a.id同parent_id   存在关系   </p>
+<hr>
+<p> 1） 内连接<br>  select   a.<em>,b.</em>   from   a   inner   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2   </p>
+<p>  2）左连接<br>  select   a.<em>,b.</em>   from   a   left   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  3   王武                  null   </p>
+<p> 3） 右连接<br>  select   a.<em>,b.</em>   from   a   right   join   b     on   a.id=b.parent_id<br>  结果是<br>  1   张3                   1     23     1<br>  2   李四                  2     34     2<br>  null                       3     34     4   </p>
+<p> 4） 完全连接<br>  select   a.<em>,b.</em>   from   a   full   join   b     on   a.id=b.parent_id   </p>
+<p>  结果是<br>  1   张3                  1     23     1<br>  2   李四                 2     34     2<br>  null               　　  3     34     4<br>  3   王武                 null</p>
+<ol>
+<li><p>=&gt; in coffee script<br>The fat arrow =&gt; can be used to both define a function, and to bind it to the current value of this, right on the spot. This is helpful when using callback-based libraries like Prototype or jQuery, for creating iterator functions to pass to each, or event-handler functions to use with bind. Functions created with the fat arrow are able to access properties of the this where they’re defined.</p>
+</li>
+<li><p>浅拷贝和深拷贝<br>这个问题我跟面试官聊，感觉他是不是有对这个概念理解有点过头了。<br>Shallow copies duplicate as little as possible. A shallow copy of a collection is a copy of the collection structure, not the elements. With a shallow copy, two collections now share the individual elements.</p>
+</li>
+</ol>
+<p>Deep copies duplicate everything. A deep copy of a collection is two collections with all of the elements in the original collection duplicated.</p>
+<p>以上为一次阿里小记</p>
+<p>Mongodb本质存储的是什么</p>
+<h3 id="Links">Links</h3>
+<p><a href="http://stackoverflow.com/questions/337878/var-self-this" target="_blank" rel="external">http://stackoverflow.com/questions/337878/var-self-this</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zzz6519003.github.io/2015/02/27/面试小记/" data-id="uircbur1q1sozj4o" class="article-share-link">Share</a>
+      
+        <a href="http://zzz6519003.github.io/2015/02/27/面试小记/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Head-First-Design-Pattern-Book-Note" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/02/13/Head-First-Design-Pattern-Book-Note/" class="article-date">
@@ -574,50 +638,6 @@
 
 
   
-    <article id="post-Difference-of-Facebook-and-China-s-FB" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/" class="article-date">
-  <time datetime="2014-12-30T00:47:10.000Z" itemprop="datePublished">Dec 30 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/30/Difference-of-Facebook-and-China-s-FB/">Difference of Facebook and China&#39;s FB</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="What_is_China’s_FB">What is China’s FB</h3>
-<h3 id="The_difference_of_the_personality_between_chinese_and_americans">The difference of the personality between chinese and americans</h3>
-<h3 id="The_difference_between_China’s_FB_&amp;_world’s_FB">The difference between China’s FB &amp; world’s FB</h3>
-<p>1 In FB, someone post a status, you reply it, you don’t need to specify the person to reply to. But in China, you have to do.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zzz6519003.github.io/2014/12/30/Difference-of-Facebook-and-China-s-FB/" data-id="yp8yi4y9cikjiszd" class="article-share-link">Share</a>
-      
-        <a href="http://zzz6519003.github.io/2014/12/30/Difference-of-Facebook-and-China-s-FB/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design/">Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Product/">Product</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -651,7 +671,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -661,6 +681,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/08/05/Migrating-to-Medium/">Migrating to Medium</a>
+          </li>
         
           <li>
             <a href="/2015/05/28/Reacting™-Charting/">Reacting™ &amp; D3® Charting</a>
@@ -676,10 +700,6 @@
         
           <li>
             <a href="/2015/04/27/JavaScript-Allonge/">JavaScript Allongé</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/25/iOS-Design-Defection/">iOS Design Defection</a>
           </li>
         
       </ul>
